@@ -56,6 +56,7 @@
 .column-grid strong { font: 500 1.3rem/1.5 var(--f-display); }
 .column-grid span { font-size: .85rem; color: var(--muted); }
 .column-grid a:hover strong { color: var(--accent-text); }
+.about { padding-block: clamp(40px,4vw,64px); }
 .about__portrait img { width: 100%; height: auto; border-radius: var(--radius); }
 .statement .w { opacity: 1; color: var(--muted); }
 .statement .w.on { color: var(--ink); }
