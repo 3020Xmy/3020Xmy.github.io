@@ -62,7 +62,7 @@
   const PAL = { navy: '#030D42', deep: '#031F64', blue: '#1C1382', violet: '#5F0689', magenta: '#C30D84', orange: '#F74D00', paper: '#F2EFE7' };
   let coverN = 0;
   const plane = (x, y, s, r, extra = '') =>
-    `<g transform="translate(${x} ${y}) rotate(${r}) scale(${s})" ${extra}><use href="#i-plane" x="-320" y="-257" width="640" height="515" style="--plane-wing:#F2EFE7;--plane-stroke:#030D42;--plane-fold:#9095B8"/></g>`;
+    `<g transform="translate(${x} ${y}) rotate(${r}) scale(${s})" ${extra}><use href="#i-plane" x="-320" y="-257" width="640" height="515" style="--plane-wing:#F2EFE7;--plane-stroke:#030D42"/></g>`;
 
   function coverSVG(spec) {
     const [seedS, type, ...rest] = spec.split(':');
