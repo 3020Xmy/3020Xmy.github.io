@@ -400,7 +400,7 @@ a:hover > .roll::after { transform: translateY(0); }
 /* ---------- About ---------- */
 .about { position: relative; border-radius: clamp(24px, 3vw, 48px) clamp(24px, 3vw, 48px) 0 0; }
 .about__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(20px, 3vw, 48px); }
-.about__portrait { grid-column: 1 / span 4; align-self: start; position: sticky; top: 110px; }
+.about__portrait { grid-column: 1 / span 4; align-self: start; position: relative; }
 .about__portrait .cover { aspect-ratio: 4 / 5; border-radius: var(--radius); }
 .about__portrait figcaption { margin-top: 14px; color: var(--muted); }
 .about__body { grid-column: 6 / -1; }
@@ -682,7 +682,7 @@ html:not(.js) .statement .w { opacity: 1; }
   .post__go { grid-area: go; width: 40px; height: 40px; }
 
   .about__grid { grid-template-columns: 1fr; }
-  .about__portrait { position: relative; top: 0; grid-column: 1; width: min(100%, 360px); }
+  .about__portrait { grid-column: 1; width: min(100%, 360px); }
   .about__body { grid-column: 1; }
   .about__cols { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
