@@ -10,6 +10,7 @@
   const prev = lab.querySelector('[data-lab-prev]');
   const next = lab.querySelector('[data-lab-next]');
   const pause = lab.querySelector('[data-lab-pause]');
+  const resetButton = lab.querySelector('[data-lab-reset]');
   const media = matchMedia('(prefers-reduced-motion: reduce)');
   const C = { navy:'#030D42', blue:'#1C1382', violet:'#5F0689', pink:'#C30D84', orange:'#F74D00', paper:'#F2EFE7', lavender:'#9095B8' };
   const colors = [C.orange,C.pink,C.paper,C.lavender];
@@ -27,7 +28,7 @@
   const theme = () => { const css=getComputedStyle(document.body); ink=css.getPropertyValue('--ink').trim(); accent=css.getPropertyValue('--accent').trim(); };
   theme();
   const models = [];
-  let paused=media.matches, raf=0, last=0;
+  let paused=media.matches, raf=0, last=0, lastInteracted=null;
   const shown = () => cards.filter(c=>!c.hidden);
   const activeIndex = () => {
     const list=shown(), x=track.getBoundingClientRect().left+parseFloat(getComputedStyle(track).paddingLeft);
@@ -35,6 +36,11 @@
     list.forEach((c,i)=>{ const d=Math.abs(c.getBoundingClientRect().left-x); if(d<distance){selected=i;distance=d;} });
     return selected;
   };
+  const resetTarget = () => {
+    const r=lastInteracted?.getBoundingClientRect(), rail=track.getBoundingClientRect();
+    return lastInteracted&&!lastInteracted.hidden&&r.right>rail.left+30&&r.left<rail.right-30?lastInteracted:shown()[activeIndex()];
+  };
+  const resetLabel = () => { resetButton.textContent='重置 · '+resetTarget().querySelector('h3').textContent; };
   const updateNavigation = () => {
     const list=shown(), i=activeIndex();
     const edge=track.getBoundingClientRect().right-parseFloat(getComputedStyle(track).paddingRight);
@@ -44,6 +50,7 @@
     const distance=track.scrollWidth-track.clientWidth;
     bar.style.setProperty('--p', distance>1?track.scrollLeft/distance:1);
     prev.disabled=track.scrollLeft<2; next.disabled=track.scrollLeft>=distance-2;
+    resetLabel();
   };
   const go = delta => {
     const list=shown(), distance=list[0].offsetWidth+parseFloat(getComputedStyle(track).gap);
@@ -218,7 +225,7 @@
     };
     m.reset=reset;observer.observe(stage);
     new ResizeObserver(()=>{if(m.initialized&&stage.clientWidth&& (stage.clientWidth!==m.s.w||stage.clientHeight!==m.s.h))reset();}).observe(stage);
-    const position=e=>{if(!m.initialized)reset();const r=stage.getBoundingClientRect();m.s.x=clamp(e.clientX-r.left,0,m.s.w);m.s.y=clamp(e.clientY-r.top,0,m.s.h);m.s.inside=true;};
+    const position=e=>{if(!m.initialized)reset();if(lastInteracted!==card){lastInteracted=card;resetLabel();}const r=stage.getBoundingClientRect();m.s.x=clamp(e.clientX-r.left,0,m.s.w);m.s.y=clamp(e.clientY-r.top,0,m.s.h);m.s.inside=true;};
     let start,dragged=false;
     stage.addEventListener('pointerdown',e=>{if(e.button!==0)return;position(e);m.s.down=true;start=[e.clientX,e.clientY];dragged=false;stage.setPointerCapture(e.pointerId);if(kind!=='wireframe'&&kind!=='moire')m.press();render(m);});
     stage.addEventListener('pointermove',e=>{position(e);if(start&&Math.hypot(e.clientX-start[0],e.clientY-start[1])>6)dragged=true;m.move();render(m);});
@@ -228,6 +235,7 @@
     stage.addEventListener('keydown',e=>{
       if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' ','Enter'].includes(e.key))return;
       if(!m.initialized)reset();
+      lastInteracted=card;resetLabel();
       e.preventDefault();m.s.inside=true;
       if(e.key==='ArrowLeft')m.s.x-=m.s.w*.08;if(e.key==='ArrowRight')m.s.x+=m.s.w*.08;
       if(e.key==='ArrowUp')m.s.y-=m.s.h*.08;if(e.key==='ArrowDown')m.s.y+=m.s.h*.08;
@@ -235,7 +243,7 @@
       if(e.key===' '||e.key==='Enter')m.press();else m.move();render(m);
     });
   });
-  lab.querySelector('[data-lab-reset]').addEventListener('click',()=>models.find(m=>m.card===shown()[activeIndex()])?.reset());
+  resetButton.addEventListener('click',()=>models.find(m=>m.card===resetTarget())?.reset());
   lab.querySelectorAll('[data-lab-filter]').forEach(btn=>btn.addEventListener('click',()=>{
     lab.querySelectorAll('[data-lab-filter]').forEach(b=>{const on=b===btn;b.classList.toggle('is-on',on);b.setAttribute('aria-pressed',String(on));});
     cards.forEach(card=>card.hidden=btn.dataset.labFilter!=='all'&&card.dataset.group!==btn.dataset.labFilter);
