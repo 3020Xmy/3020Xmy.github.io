@@ -596,28 +596,6 @@
     loop();
   }
 
-  /* ---------- Lab: horizontal pinned scroll ---------- */
-  const lab = $('[data-lab]'), labTrack = $('[data-lab-track]'), labBar = $('[data-lab-bar]'), labCount = $('[data-lab-count]');
-  let labDist = 0, labTop = 0, labPad = 0;
-  const labTotal = labTrack ? labTrack.children.length : 0;
-  const labDesktop = () => innerWidth > 900 && !reduce;
-  const measureLab = () => {
-    if (!lab) return;
-    if (!labDesktop()) { lab.style.height = ''; return; }
-    labPad = parseFloat(getComputedStyle(lab).paddingTop);
-    labDist = Math.max(0, labTrack.scrollWidth - innerWidth);
-    lab.style.height = (innerHeight + labDist + labPad) + 'px';
-    labTop = lab.getBoundingClientRect().top + scrollY + labPad;
-  };
-  measureLab();
-  addEventListener('resize', measureLab);
-  addEventListener('load', measureLab);
-  if (lab && !labDesktop()) labTrack.addEventListener('scroll', () => {
-    const p = labTrack.scrollLeft / Math.max(1, labTrack.scrollWidth - labTrack.clientWidth);
-    labBar.style.setProperty('--p', p);
-    labCount.textContent = String(Math.min(labTotal, 1 + Math.round(p * (labTotal - 1)))).padStart(2, '0') + ' / ' + String(labTotal).padStart(2, '0');
-  }, { passive: true });
-
   /* ---------- Master scroll loop ---------- */
   let sy = scrollY, vel = 0, lastScroll = scrollY;
   const frame = () => {
@@ -647,133 +625,10 @@
       stWords.forEach((w, i) => w.classList.toggle('on', i < on));
     }
 
-    if (lab && labDesktop() && labDist) {
-      const p = clamp((sy - labTop) / labDist, 0, 1);
-      labTrack.style.transform = `translate3d(${-p * labDist}px,0,0)`;
-      labBar.style.setProperty('--p', p);
-      labCount.textContent = String(Math.min(labTotal, 1 + Math.floor(p * (labTotal - .01)))).padStart(2, '0') + ' / ' + String(labTotal).padStart(2, '0');
-    }
-
     if (header) onHeader();
     requestAnimationFrame(frame);
   };
   requestAnimationFrame(frame);
-
-  /* ---------- Lab experiments ---------- */
-  const visible = new WeakMap();
-  const vio = new IntersectionObserver(es => es.forEach(e => visible.set(e.target, e.isIntersecting)));
-  const setupCanvas = (cv, draw, init) => {
-    const ctx = cv.getContext('2d');
-    const st = { W: 0, H: 0, mx: -1e4, my: -1e4, in: false, t: 0 };
-    const size = () => {
-      const dpr = Math.min(devicePixelRatio || 1, 2);
-      st.W = cv.clientWidth; st.H = cv.clientHeight;
-      cv.width = st.W * dpr; cv.height = st.H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      init && init(ctx, st);
-    };
-    size(); addEventListener('resize', size);
-    const stage = cv.parentElement;
-    vio.observe(stage);
-    stage.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); st.mx = e.clientX - r.left; st.my = e.clientY - r.top; st.in = true; });
-    stage.addEventListener('pointerleave', () => { st.in = false; });
-    const loop = () => { requestAnimationFrame(loop); if (!visible.get(stage)) return; st.t++; draw(ctx, st); };
-    if (reduce) { st.t = 200; draw(ctx, st); } else loop();
-  };
-
-  // value noise
-  const perm = new Uint8Array(512); { const R = rng(7); const p = [...Array(256).keys()].sort(() => R() - .5); for (let i = 0; i < 512; i++) perm[i] = p[i & 255]; }
-  const fade = t => t * t * (3 - 2 * t);
-  const noise = (x, y) => {
-    const X = Math.floor(x) & 255, Y = Math.floor(y) & 255, xf = x - Math.floor(x), yf = y - Math.floor(y);
-    const h = (i, j) => perm[perm[X + i] + Y + j] / 255;
-    const u = fade(xf), v = fade(yf);
-    return lerp(lerp(h(0, 0), h(1, 0), u), lerp(h(0, 1), h(1, 1), u), v);
-  };
-
-  $$('canvas[data-exp]').forEach(cv => {
-    const kind = cv.dataset.exp;
-    if (kind === 'flow') {
-      let ps = [];
-      setupCanvas(cv, (ctx, s) => {
-        ctx.fillStyle = 'rgba(3,13,66,.09)'; ctx.fillRect(0, 0, s.W, s.H);
-        const z = s.t * .002;
-        for (const p of ps) {
-          let a = noise(p.x * .006, p.y * .006 + z) * Math.PI * 4;
-          if (s.in) { const dx = p.x - s.mx, dy = p.y - s.my, d = Math.hypot(dx, dy); if (d < 120) a = Math.atan2(dy, dx) + Math.PI / 2; }
-          const ox = p.x, oy = p.y;
-          p.x += Math.cos(a) * 1.3; p.y += Math.sin(a) * 1.3; p.life--;
-          if (p.x < 0 || p.x > s.W || p.y < 0 || p.y > s.H || p.life < 0) { p.x = Math.random() * s.W; p.y = Math.random() * s.H; p.life = 100 + Math.random() * 200; continue; }
-          ctx.strokeStyle = p.c; ctx.lineWidth = p.w;
-          ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(p.x, p.y); ctx.stroke();
-        }
-      }, (ctx, s) => {
-        ctx.fillStyle = '#030D42'; ctx.fillRect(0, 0, s.W, s.H);
-        const cols = ['rgba(242,239,231,.55)', 'rgba(242,239,231,.3)', '#F74D00', '#C30D84', 'rgba(158,168,255,.6)'];
-        ps = Array.from({ length: Math.round(s.W * s.H / 90) }, (_, i) => ({ x: Math.random() * s.W, y: Math.random() * s.H, life: Math.random() * 300, c: cols[i % 17 === 0 ? 2 : i % 11 === 0 ? 3 : i % 5 === 0 ? 4 : i % 2], w: i % 17 === 0 ? 1.6 : 1 }));
-      });
-    }
-    if (kind === 'swarm') {
-      let ag = [];
-      let ink = cssVar('--ink'), acc = cssVar('--accent');
-      themeListeners.push(() => setTimeout(() => { ink = cssVar('--ink'); acc = cssVar('--accent'); }, 30));
-      setupCanvas(cv, (ctx, s) => {
-        ctx.clearRect(0, 0, s.W, s.H);
-        const tx = s.in ? s.mx : s.W / 2 + Math.cos(s.t * .02) * s.W * .3;
-        const ty = s.in ? s.my : s.H / 2 + Math.sin(s.t * .031) * s.H * .3;
-        for (const a of ag) {
-          const dx = tx - a.x, dy = ty - a.y, d = Math.hypot(dx, dy);
-          const ta = Math.atan2(dy, dx);
-          let da = ta - a.a; da = Math.atan2(Math.sin(da), Math.cos(da));
-          a.a += da * a.k;
-          const near = clamp(1 - d / 160, 0, 1);
-          ctx.save(); ctx.translate(a.x, a.y); ctx.rotate(a.a);
-          ctx.fillStyle = near > .2 ? acc : ink; ctx.globalAlpha = .35 + near * .65;
-          const sz = 5 + near * 4;
-          ctx.beginPath(); ctx.moveTo(sz, 0); ctx.lineTo(-sz * .7, -sz * .55); ctx.lineTo(-sz * .3, 0); ctx.lineTo(-sz * .7, sz * .55); ctx.closePath(); ctx.fill();
-          ctx.restore();
-        }
-        ctx.globalAlpha = 1;
-      }, (ctx, s) => {
-        ag = []; const g = 26;
-        for (let y = g / 2; y < s.H; y += g) for (let x = g / 2; x < s.W; x += g) ag.push({ x: x + (Math.random() - .5) * 6, y: y + (Math.random() - .5) * 6, a: Math.random() * 6, k: .05 + Math.random() * .1 });
-      });
-    }
-    if (kind === 'memory') {
-      let cells = [], cols, rows, sz = 22;
-      setupCanvas(cv, (ctx, s) => {
-        ctx.fillStyle = '#030D42'; ctx.fillRect(0, 0, s.W, s.H);
-        if (s.t % 3 === 0) for (let i = 0; i < 3; i++) { const c = cells[(Math.random() * cells.length) | 0]; c.v = 1; c.c = Math.random() > .82 ? '#F74D00' : Math.random() > .5 ? '#C30D84' : '#5F6BFF'; }
-        const hx = Math.floor(s.mx / sz), hy = Math.floor(s.my / sz);
-        cells.forEach((c, i) => {
-          const x = (i % cols) * sz, y = Math.floor(i / cols) * sz;
-          const hov = s.in && Math.abs(i % cols - hx) <= 1 && Math.abs(Math.floor(i / cols) - hy) <= 1;
-          if (hov) { c.v = 1; c.c = '#F74D00'; }
-          c.v *= .965;
-          ctx.fillStyle = 'rgba(242,239,231,.06)'; ctx.fillRect(x + 2, y + 2, sz - 4, sz - 4);
-          if (c.v > .02) { ctx.globalAlpha = c.v; ctx.fillStyle = c.c; ctx.fillRect(x + 2, y + 2, sz - 4, sz - 4); ctx.globalAlpha = 1; }
-        });
-        ctx.font = '500 11px "JetBrains Mono", monospace'; ctx.fillStyle = 'rgba(242,239,231,.85)';
-        const addr = s.in ? '0x' + ((hy * cols + hx) * 8 + 0x7FF0).toString(16).toUpperCase() : 'heap: ' + (cells.filter(c => c.v > .3).length * 8) + ' B in use';
-        ctx.fillStyle = 'rgba(3,13,66,.85)'; ctx.fillRect(10, s.H - 32, ctx.measureText(addr).width + 20, 22);
-        ctx.fillStyle = '#F2EFE7'; ctx.fillText(addr, 20, s.H - 17);
-      }, (ctx, s) => {
-        cols = Math.ceil(s.W / sz); rows = Math.ceil(s.H / sz);
-        cells = Array.from({ length: cols * rows }, () => ({ v: Math.random() > .85 ? Math.random() : 0, c: '#5F6BFF' }));
-      });
-    }
-  });
-
-  const typeEl = $('[data-exp="type"]');
-  if (typeEl) {
-    const stage = typeEl.parentElement;
-    stage.addEventListener('pointermove', e => {
-      const r = stage.getBoundingClientRect();
-      typeEl.style.setProperty('--w', Math.round(100 + (e.clientX - r.left) / r.width * 800));
-      typeEl.style.setProperty('--s', Math.round((e.clientY - r.top) / r.height * 100));
-    });
-    stage.addEventListener('pointerleave', () => { typeEl.style.removeProperty('--w'); typeEl.style.removeProperty('--s'); });
-  }
 
   /* ==========================================================================
      Article page
