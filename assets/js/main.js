@@ -108,6 +108,116 @@
         else g += `<rect x="${x * s + 2}" y="${y * s + 2}" width="${s - 4}" height="${s - 4}" rx="3" fill="none" stroke="${PAL.paper}" stroke-opacity=".08"/>`;
       }
       g += plane(W * (.3 + R() * .4), H * (.3 + R() * .4), .13, -10);
+    } else if (type === 'telemetry') {
+      for (let i = 0; i < 6; i++) g += `<path d="M0 ${55 + i * 38}H400" stroke="${PAL.paper}" stroke-opacity=".1"/>`;
+      const curves = [PAL.blue, PAL.magenta, PAL.orange];
+      curves.forEach((c, k) => {
+        let d = 'M-10 235';
+        for (let x = 0; x <= 420; x += 7) {
+          const y = 192 - k * 22 - Math.sin(x * .019 + k) * 35 - Math.exp(-(((x - 250 + k * 45) / 28) ** 2)) * 95;
+          d += ` L${x} ${y.toFixed(1)}`;
+        }
+        g += `<path d="${d}L420 310H-10Z" fill="${c}" fill-opacity=".16"/><path d="${d}" fill="none" stroke="${c}" stroke-width="${k === 2 ? 3 : 2}"/>`;
+      });
+      g += `<path d="M290 35V265" stroke="${PAL.paper}" stroke-opacity=".35" stroke-dasharray="3 6"/><circle cx="290" cy="110" r="5" fill="${PAL.orange}"/>`;
+      g += plane(315, 92, .09, -18);
+    } else if (type === 'layers') {
+      bg = PAL.blue;
+      for (let i = 0; i < 5; i++) {
+        const x = 42 + i * 34, y = 202 - i * 31;
+        g += `<path d="M${x} ${y}l108 -62 108 62 -108 62Z" fill="${[PAL.navy, PAL.violet, PAL.magenta, PAL.orange, PAL.paper][i]}" fill-opacity="${i === 4 ? .9 : .8}" stroke="${PAL.paper}" stroke-opacity=".25"/>`;
+      }
+      g += `<path d="M40 65l55 -32M310 230l55 -32" stroke="${PAL.orange}" stroke-width="3"/>`;
+      g += plane(248, 105, .1, 8);
+    } else if (type === 'mesh') {
+      const project = (u, v) => {
+        const z = 48 * Math.sin(u * .018) * Math.cos(v * .024);
+        return [200 + (u - v) * .66, 153 + (u + v) * .25 - z];
+      };
+      for (let axis = 0; axis < 2; axis++) for (let t = -150; t <= 150; t += 18) {
+        let d = '';
+        for (let j = -150; j <= 150; j += 10) {
+          const p = project(axis ? j : t, axis ? t : j);
+          d += `${j === -150 ? 'M' : 'L'}${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
+        }
+        g += `<path d="${d}" fill="none" stroke="${t === 12 ? PAL.orange : axis ? PAL.magenta : PAL.paper}" stroke-opacity="${t === 12 ? 1 : axis ? .7 : .35}" stroke-width="${t === 12 ? 2.5 : .9}"/>`;
+      }
+      g += plane(305, 80, .085, -5);
+    } else if (type === 'sampling') {
+      const points = [];
+      for (let x = -10; x <= 410; x += 5) points.push([x, 157 + Math.sin(x * .031) * 48 + Math.sin(x * .13) * 16]);
+      g += `<path d="${points.map(([x, y], i) => `${i ? 'L' : 'M'}${x} ${y}`).join(' ')}" fill="none" stroke="${PAL.paper}" stroke-opacity=".3"/>`;
+      const selected = points.filter((_, i) => i % 9 === 0);
+      g += `<path d="${selected.map(([x, y], i) => `${i ? 'L' : 'M'}${x} ${y}`).join(' ')}" fill="none" stroke="${PAL.orange}" stroke-width="2.5"/>`;
+      selected.forEach(([x, y]) => {
+        g += `<path d="M${x} ${y + 8}V260" stroke="${PAL.magenta}" stroke-opacity=".4"/><circle cx="${x}" cy="${y}" r="4" fill="${PAL.orange}"/>`;
+      });
+      g += `<path d="M25 260H375" stroke="${PAL.paper}" stroke-opacity=".2"/>`;
+      g += plane(280, 75, .095, -12);
+    } else if (type === 'facets') {
+      const points = [[200, 38], [78, 112], [106, 225], [232, 270], [335, 185], [308, 82], [200, 152]];
+      for (let i = 0; i < 6; i++) {
+        const a = points[i], b = points[(i + 1) % 6], c = points[6];
+        g += `<path d="M${a}L${b}L${c}Z" fill="${[PAL.orange, PAL.violet, PAL.blue, PAL.magenta, PAL.deep, PAL.paper][i]}" fill-opacity="${i === 5 ? .8 : 1}" stroke="${PAL.navy}" stroke-width="2"/>`;
+      }
+      g += `<path d="M38 205l40 -23M324 54l37 -21" stroke="${PAL.paper}" stroke-opacity=".4"/>`;
+      g += plane(203, 158, .1, 12);
+    } else if (type === 'orbital') {
+      bg = PAL.violet;
+      g += `<circle cx="200" cy="150" r="91" fill="${PAL.navy}"/><circle cx="177" cy="136" r="52" fill="${PAL.blue}"/>`;
+      for (let i = 0; i < 6; i++) g += `<ellipse cx="200" cy="150" rx="${148 - i * 10}" ry="${38 + i * 9}" transform="rotate(${i * 29 - 45} 200 150)" fill="none" stroke="${i === 1 ? PAL.orange : PAL.paper}" stroke-width="${i === 1 ? 3 : 1}" stroke-opacity="${i === 1 ? 1 : .32}"/>`;
+      g += `<circle cx="80" cy="110" r="8" fill="${PAL.orange}"/>`;
+      g += plane(216, 152, .11, -8);
+    } else if (type === 'contours') {
+      bg = PAL.deep;
+      for (let i = 0; i < 22; i++) {
+        let d = '';
+        for (let j = 0; j <= 80; j++) {
+          const a = j / 80 * Math.PI * 2, r = 15 + i * 9 + Math.sin(a * 3 + i * .12) * (8 + i * .8);
+          d += `${j ? 'L' : 'M'}${(170 + Math.cos(a) * r * 1.35).toFixed(1)} ${(153 + Math.sin(a) * r * .72).toFixed(1)}`;
+        }
+        g += `<path d="${d}Z" fill="none" stroke="${i % 6 === 0 ? PAL.orange : PAL.paper}" stroke-opacity="${i % 6 === 0 ? .9 : .25}" stroke-width="${i % 6 === 0 ? 2 : .8}"/>`;
+      }
+      g += plane(263, 133, .11, 10);
+    } else if (type === 'vision') {
+      const colors = [PAL.blue, PAL.violet, PAL.magenta, PAL.orange];
+      for (let i = 0; i < 100; i++) {
+        const x = 40 + R() * 320, y = 36 + R() * 228;
+        const r = 2 + Math.max(0, 1 - Math.hypot(x - 200, y - 150) / 160) * 10;
+        g += `<circle cx="${x}" cy="${y}" r="${r}" fill="${colors[Math.floor(R() * colors.length)]}" opacity=".8"/>`;
+      }
+      g += `<path d="M110 95V72H135M265 72H290V95M290 205V228H265M135 228H110V205" fill="none" stroke="${PAL.paper}" stroke-width="2"/><circle cx="200" cy="150" r="60" fill="${PAL.navy}" fill-opacity=".75"/>`;
+      g += plane(200, 150, .12, 0);
+    } else if (type === 'fracture') {
+      bg = PAL.orange;
+      const shards = ['M-20 30L182 134 120 16Z', 'M137 -20L200 117 297 -20Z', 'M330 5L220 134 420 84Z', 'M420 105L235 158 405 247Z', 'M397 281L220 182 263 320Z', 'M231 320L187 187 98 307Z', 'M58 300L165 175 -20 218Z', 'M-20 178L168 150 20 68Z'];
+      shards.forEach((d, i) => g += `<path d="${d}" fill="${i % 3 === 0 ? PAL.blue : PAL.navy}"/>`);
+      g += `<path d="M49 53L146 108M277 215L333 252" stroke="${PAL.paper}" stroke-opacity=".35"/>`;
+      g += plane(201, 152, .1, -15);
+    } else if (type === 'strata') {
+      for (let i = 0; i < 13; i++) {
+        const y = 42 + i * 18, offset = Math.sin(i * .6) * 35;
+        g += `<path d="M${38 + offset} ${y}l180 -25 140 35 -180 25Z" fill="${i === 6 ? PAL.orange : i % 3 === 0 ? PAL.magenta : PAL.blue}" stroke="${PAL.paper}" stroke-opacity=".22" stroke-width=".8"/>`;
+      }
+      g += plane(263, 132, .1, 6);
+    } else if (type === 'braid') {
+      for (let i = 0; i < 18; i++) {
+        let d = '';
+        for (let x = -20; x <= 420; x += 8) {
+          const y = 150 + Math.sin(x * .018 + i * .23) * (48 + i * 3);
+          d += `${x === -20 ? 'M' : 'L'}${x} ${y.toFixed(1)}`;
+        }
+        g += `<path d="${d}" fill="none" stroke="${i < 6 ? PAL.orange : i < 12 ? PAL.magenta : PAL.paper}" stroke-opacity="${i < 12 ? .8 : .35}" stroke-width="${i % 6 === 0 ? 2.5 : 1.1}"/>`;
+      }
+      g += plane(216, 143, .115, -8);
+    } else if (type === 'signal') {
+      bg = PAL.blue;
+      for (let i = 0; i < 55; i++) {
+        const x = 12 + i * 7, h = 12 + Math.abs(Math.sin(i * .25) * Math.cos(i * .07)) * 165;
+        g += `<path d="M${x} ${150 - h / 2}V${150 + h / 2}" stroke="${i % 9 < 3 ? PAL.orange : PAL.paper}" stroke-opacity="${i % 9 < 3 ? 1 : .4}" stroke-width="3"/>`;
+      }
+      g += `<circle cx="200" cy="150" r="48" fill="${PAL.navy}"/>`;
+      g += plane(200, 150, .1, 5);
     } else if (type === 'stripes') {
       g += `<rect width="${W}" height="${H}" fill="url(#${id}g)"/>`;
       const n = 12, ang = -30 + R() * 60;
