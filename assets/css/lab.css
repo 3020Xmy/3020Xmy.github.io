@@ -1,5 +1,5 @@
 /* The existing horizontal exhibition, with direct navigation and touch input. */
-.lab { height: auto; padding-bottom: var(--sec-pad); }
+.lab { height: auto; padding-top: clamp(32px,3vw,48px); padding-bottom: var(--sec-pad); }
 .lab .lab__pin { position: relative; height: auto; padding-top: 0; overflow: hidden; gap: 28px; }
 .lab__note { max-width: 52em; }
 .lab__toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 26px; flex-wrap: wrap; }
