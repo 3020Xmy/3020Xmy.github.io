@@ -1,0 +1,825 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0">
+  <channel>
+    <title>WildPointer · 野指针</title>
+    <link>https://3020xmy.github.io/</link>
+    <description>系统编程与工程实践</description>
+    <language>zh-CN</language>
+    <item>
+      <title>技术书籍精读笔记：程序员的自我修养-链接，转载与库（陆）</title>
+      <link>https://3020xmy.github.io/posts/155127962.html</link>
+      <guid>https://3020xmy.github.io/posts/155127962.html</guid>
+      <description>本文介绍了Linux系统下动态链接的核心概念与实现机制。动态链接将符号解析和重定位推迟到运行时，通过动态链接器实现共享库的加载和地址解析。相比静态链接，动态链接具有节省内存、便于更新、提高缓存命中率等优势。文章详细解析了动态链接过程、运行时地址空间分布，并重点阐述了地址无关代码（PIC）技术，包括固定装载地址、装载时重定位及PIC的实现原理。PIC通过全局偏移表（GOT）和过程链接表（PLT）实现模块间引用，使指令部分可被多进程共享，解决了早期技术的局限性。</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Sun, 26 Jul 2026 13:12:11 +0800</pubDate>
+    </item>
+    <item>
+      <title>深入浅出VTK：VTK的基本概念及其入门项目讲解</title>
+      <link>https://3020xmy.github.io/posts/160309305.html</link>
+      <guid>https://3020xmy.github.io/posts/160309305.html</guid>
+      <description>本文介绍了如何在Visual Studio中编写第一个VTK程序，并通过示例代码讲解了VTK的核心概念。主要内容包括：1. 展示了创建圆柱体模型的完整VTK程序代码；2. 详细解释了vtkCylinderSource（数据源）、vtkPolyDataMapper（映射器）、vtkActor（演员）等关键类的作用；3. 用工厂流水线类比VTK的渲染流程；4. 通过舞台剧的生动比喻，帮助理解VTK的渲染窗口、场景、交互器等概念。文章适合VTK初学者快速掌握基本框架和核心概念，为进一步学习打下基础。</description>
+      <category>深入浅出VTK</category>
+      <pubDate>Sun, 19 Jul 2026 20:40:48 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：Procexp64进程资源管理器</title>
+      <link>https://3020xmy.github.io/posts/157430126.html</link>
+      <guid>https://3020xmy.github.io/posts/157430126.html</guid>
+      <description>Procexp64是Sysinternals套件中的高级进程管理工具，提供比Windows任务管理器更细粒度的系统监控功能。它能详细展示进程、线程、句柄、DLL等系统资源使用情况，支持查看GPU、I/O、内存等性能指标，并可通过符号表解析线程调用栈。工具界面包含进程树、性能图表、资源列等多个模块，支持创建Dump文件和查看环境变量。本文详细介绍了从下载安装到各功能模块的使用方法，包括如何分析线程状态、内存使用、GPU负载等关键指标，是Windows系统开发和运维人员排查问题的强力工具。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Sun, 19 Jul 2026 16:12:59 +0800</pubDate>
+    </item>
+    <item>
+      <title>项目实战：使用Windows API实现程序性能监控</title>
+      <link>https://3020xmy.github.io/posts/158612405.html</link>
+      <guid>https://3020xmy.github.io/posts/158612405.html</guid>
+      <description>本文介绍了如何在Windows系统下使用Windows API实现程序性能监控工具的开发。由于Windows系统的开放性限制，作者开发了一个基于Visual Studio和Qt6的可视化监控工具，包含CPU、内存、I/O和线程监控模块。文章详细讲解了10个关键Windows API的使用方法，包括GetSystemInfo、GetProcessTimes、GetProcessMemoryInfo等，并提供了结构体参数说明。项目采用模块化设计，使用者可根据需要选择特定监控模块或整体集成。该工具旨在帮助开发者捕</description>
+      <category>项目实战</category>
+      <pubDate>Sun, 12 Jul 2026 15:08:44 +0800</pubDate>
+    </item>
+    <item>
+      <title>Python量化交易：全景目录</title>
+      <link>https://3020xmy.github.io/posts/160364570.html</link>
+      <guid>https://3020xmy.github.io/posts/160364570.html</guid>
+      <description>《Python量化交易专栏介绍》摘要：本专栏旨在帮助读者掌握Python量化交易技能，适合金融爱好者、开发者、转型投资者及金融科技新人。通过实战教学，专栏将指导读者构建数据管道、复现经典策略，并规避回测陷阱，最终实现自动化交易系统。专栏强调可复现与工程化，避免学术化或黑箱化内容，为初学者搭建从理论到实践的桥梁。读者可通过邮箱或GitHub与作者交流，共同完善内容。</description>
+      <category>Python量化交易</category>
+      <pubDate>Tue, 21 Apr 2026 19:38:22 +0800</pubDate>
+    </item>
+    <item>
+      <title>项目实战：编写CMakeLists管理Qt+OpenCV项目</title>
+      <link>https://3020xmy.github.io/posts/160250951.html</link>
+      <guid>https://3020xmy.github.io/posts/160250951.html</guid>
+      <description>本文详细介绍了将基于Qt和OpenCV的Visual Studio项目迁移到CMake构建系统的完整过程。文章首先展示了原始项目结构，然后逐步讲解了CMakeLists文件的编写方法，包括设置C++17标准、禁用编译器扩展、配置Qt自动处理、引入OpenCV库、添加项目文件等关键步骤。特别说明了如何处理OpenCV动态库的路径问题，以及如何设置UTF-8编码防止乱码。最后提供了完整的CMakeLists文件内容和构建命令，指导读者成功生成可执行文件。该教程可作为将MSBuild项目迁移到CMake的实用参考</description>
+      <category>项目实战</category>
+      <pubDate>Mon, 20 Apr 2026 19:53:15 +0800</pubDate>
+    </item>
+    <item>
+      <title>深入浅出VTK：使用Visual Studio配置VTK环境并编写示例</title>
+      <link>https://3020xmy.github.io/posts/160308298.html</link>
+      <guid>https://3020xmy.github.io/posts/160308298.html</guid>
+      <description>本文详细介绍了在Visual Studio中配置和使用VTK库的方法。主要内容包括：如何在VS中配置VTK环境，包括设置头文件路径、静态链接库路径和依赖项；如何将配置好的项目导出为模板，方便后续快速创建VTK项目；提供了一个简单的VTK示例代码，验证环境配置是否正确。文章还提供了相关配置截图和详细的静态库列表，并强调了使用vtkAutoInit进行模块初始化的必要性。通过本文的指导，读者可以快速搭建VTK开发环境并开始相关开发工作。</description>
+      <category>深入浅出VTK</category>
+      <pubDate>Sun, 19 Apr 2026 15:44:21 +0800</pubDate>
+    </item>
+    <item>
+      <title>C++：全景目录</title>
+      <link>https://3020xmy.github.io/posts/160308169.html</link>
+      <guid>https://3020xmy.github.io/posts/160308169.html</guid>
+      <description>本专栏旨在帮助C++学习者突破从语法掌握到工程实践的瓶颈，面向已掌握基础但缺乏项目经验的开发者。通过实战项目，系统讲解从需求分析到部署维护的全流程，填补理论与实践之间的鸿沟。目前已发布内存顺序等专题文章，未来将提供更多由浅入深的项目案例。专栏提供GitHub仓库和邮箱联系方式，欢迎交流反馈。目标是培养可落地的C++开发能力，助力职业发展和技术提升。</description>
+      <category>C++</category>
+      <pubDate>Sun, 19 Apr 2026 14:47:21 +0800</pubDate>
+    </item>
+    <item>
+      <title>C++：内存顺序(Memory Order)的概念以及使用</title>
+      <link>https://3020xmy.github.io/posts/159921587.html</link>
+      <guid>https://3020xmy.github.io/posts/159921587.html</guid>
+      <description>本文深入解析C++内存顺序(MemoryOrder)在多线程编程中的应用。首先通过生产者-消费者模型、自旋锁和双重检测锁等典型问题，揭示不加控制的多线程操作可能导致的幽灵数据、竞争条件和崩溃等问题。接着详细讲解六种内存顺序的特性及其适用场景，包括relaxed、acquire/release、acq_rel和seq_cst等。通过代码示例展示如何利用内存顺序解决实际问题，相比互斥锁和默认atomic操作，内存顺序能提供更精确的控制和更高的性能。文章强调正确使用内存顺序需要深入理解缓存、写缓冲区和依赖链等底层</description>
+      <category>C++</category>
+      <pubDate>Fri, 17 Apr 2026 20:53:03 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：DependenciesGui依赖查看工具</title>
+      <link>https://3020xmy.github.io/posts/157430133.html</link>
+      <guid>https://3020xmy.github.io/posts/157430133.html</guid>
+      <description>DependenciesGui是一款Windows平台的DLL依赖分析工具，可作为DependencyWalker的现代替代品。用户可从GitHub下载压缩包，解压后运行DependenciesGui.exe即可使用。该工具通过四个窗口展示分析结果，支持拖拽或文件菜单打开目标文件，帮助开发者快速检测缺失的DLL或函数问题。操作简便，适合排查程序加载故障。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Sun, 05 Apr 2026 14:48:45 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：从零开始编写CMakeLists</title>
+      <link>https://3020xmy.github.io/posts/142031902.html</link>
+      <guid>https://3020xmy.github.io/posts/142031902.html</guid>
+      <description>本文介绍了CMake跨平台构建系统的基本概念和使用方法。CMake通过CMakeLists.txt配置文件生成标准构建文件，支持多种编程语言和操作系统。文章详细讲解了CMake的基本命令、变量定义、C++标准指定、文件搜索、静态/动态库生成与使用等内容，并提供了完整的示例代码和操作流程。通过实际案例演示了如何使用CMake构建项目、生成可执行文件和库文件，以及如何在项目中引用这些库文件。最后还介绍了CMake中的日志功能，为开发者提供了全面的CMake入门指南。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Sun, 05 Apr 2026 14:14:35 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：Beyond Compare文件比较工具</title>
+      <link>https://3020xmy.github.io/posts/157430117.html</link>
+      <guid>https://3020xmy.github.io/posts/157430117.html</guid>
+      <description>BeyondCompare是一款功能强大的文件/文件夹比较工具。用户可从官网下载中文版安装包，按指引完成安装（选择安装路径、附加任务等）。安装完成后，通过新建项选择比较功能，输入文件夹路径即可直观查看差异，还可在菜单栏设置比较规则。该工具操作简便，支持多种比较需求。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Sun, 05 Apr 2026 12:08:38 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：Motrix多合一下载工具</title>
+      <link>https://3020xmy.github.io/posts/157430165.html</link>
+      <guid>https://3020xmy.github.io/posts/157430165.html</guid>
+      <description>Motrix是一款功能强大的开源免费下载工具，支持HTTP、FTP、BT和磁力链接等多种下载方式。用户可通过官网进行下载，安装后可通过简洁界面添加下载任务，自定义保存路径。软件还提供个性化设置选项，包括界面颜色、语言和默认下载路径等，满足不同用户的下载管理需求。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Sun, 05 Apr 2026 11:11:07 +0800</pubDate>
+    </item>
+    <item>
+      <title>Debug调试之道：YunShellExtV164.dll导致的程序效率降低</title>
+      <link>https://3020xmy.github.io/posts/158423210.html</link>
+      <guid>https://3020xmy.github.io/posts/158423210.html</guid>
+      <description>本文分析了Qt程序打包后运行效率降低的问题，最终定位到百度网盘的YunShellExtV164.dll动态链接库是根本原因。通过多维度排查（GPU性能、程序日志、优化等级、CPU/内存情况等），发现该DLL会持续扫描系统进程并检测互斥体，导致资源被大量消耗。测试表明，卸载百度网盘后问题消失，重新安装后又复现。该问题凸显了第三方DLL注入可能对程序性能产生的严重影响，建议开发者注意此类潜在风险。</description>
+      <category>Debug调试之道</category>
+      <pubDate>Fri, 27 Feb 2026 15:40:44 +0800</pubDate>
+    </item>
+    <item>
+      <title>深入浅出VTK：全景目录</title>
+      <link>https://3020xmy.github.io/posts/156361963.html</link>
+      <guid>https://3020xmy.github.io/posts/156361963.html</guid>
+      <description>《深入浅出VTK》专栏简介：VTK是一款开源的跨平台可视化工具包，广泛应用于医学影像、工程仿真等领域。专栏采用原理+实践的方式，既解析VTK的底层架构与渲染机制，又提供可运行的代码示例，帮助开发者从API调用提升到系统级应用。专栏面向具备基础编程能力的工程师和研究者，旨在填补VTK入门教程与生产实践之间的空白，分享真实项目中的最佳实践与解决方案。读者可通过邮箱或GitHub仓库与作者交流反馈。</description>
+      <category>深入浅出VTK</category>
+      <pubDate>Sun, 28 Dec 2025 16:16:35 +0800</pubDate>
+    </item>
+    <item>
+      <title>深入浅出VTK：编译并使用VTK</title>
+      <link>https://3020xmy.github.io/posts/142257431.html</link>
+      <guid>https://3020xmy.github.io/posts/142257431.html</guid>
+      <description>本文介绍了VTK(Visualization Toolkit)可视化工具包的安装和使用方法。VTK是一个开源、跨平台的图形应用函数库，主要用于三维计算机图形、图像处理及可视化。文章详细讲解了从官网下载VTK源码的步骤，并重点说明了使用CMake和Visual Studio编译VTK的过程，包括路径选择、配置选项设置以及最终生成VTK文件的操作。同时提供了编译时的配置建议表格，帮助用户根据需求进行个性化设置。最后展示了成功生成VTK文件后的目录结构，为读者后续使用VTK进行可视化开发奠定了基础。</description>
+      <category>深入浅出VTK</category>
+      <pubDate>Sun, 28 Dec 2025 16:14:05 +0800</pubDate>
+    </item>
+    <item>
+      <title>环境配置指南：配置并使用Doxygen文档生成工具</title>
+      <link>https://3020xmy.github.io/posts/155388943.html</link>
+      <guid>https://3020xmy.github.io/posts/155388943.html</guid>
+      <description>本文介绍了Doxygen工具的下载、安装和使用方法。Doxygen是一款开源文档生成工具，可从源代码注释自动生成技术文档，适用于团队协作和代码维护。文章详细展示了Windows系统下1.15.0版本的下载过程（官网https://www.doxygen.nl/download.html），并分步骤演示了安装向导操作，包括接受协议、选择路径、组件配置等。安装完成后，用户可通过bin目录下的doxywizard.exe启动GUI界面开始使用。该指南为开发者提供了从获取到运行Doxygen的完整流程，帮助快速上手</description>
+      <category>环境配置指南</category>
+      <pubDate>Tue, 09 Dec 2025 22:15:42 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：时间序列降采样算法LTOB</title>
+      <link>https://3020xmy.github.io/posts/155610847.html</link>
+      <guid>https://3020xmy.github.io/posts/155610847.html</guid>
+      <description>本文介绍了时间序列降采样算法LTOB(Largest-Triangle-One-Bucket)，该算法通过将数据划分为若干桶并选择最具代表性的点来减少数据量，同时保留关键特征。文章详细阐述了LTOB的原理：将数据均匀分配到桶中，通过计算相邻桶点形成的最大三角形面积来确定代表点。文中提供了C++实现代码，并说明了算法的优缺点：优点是计算复杂度低、实现简单；缺点是全局趋势把握不足。最后给出了基于QT实现的开源可视化示例(GitHub链接)。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Tue, 09 Dec 2025 21:44:53 +0800</pubDate>
+    </item>
+    <item>
+      <title>深入浅出OpenCV：查阅OpenCV的实现源码</title>
+      <link>https://3020xmy.github.io/posts/155235316.html</link>
+      <guid>https://3020xmy.github.io/posts/155235316.html</guid>
+      <description>本文介绍了如何通过OpenCV在线文档和本地工具查阅OpenCV源码的方法。首先使用OpenCV官方文档(https://docs.opencv.ac.cn/)检索函数和对象声明，然后借助Everything文件搜索工具和Notepad++文本编辑器在本地定位具体实现代码。文章以cv::Mat类型和Canny函数为例，详细演示了从在线文档查询到本地文件定位的完整流程，包括如何区分声明文件(.hpp)和实现文件路径，为开发者深入理解OpenCV实现提供了实用参考。</description>
+      <category>深入浅出OpenCV</category>
+      <pubDate>Sun, 07 Dec 2025 11:21:10 +0800</pubDate>
+    </item>
+    <item>
+      <title>环境配置指南：全景目录</title>
+      <link>https://3020xmy.github.io/posts/155606013.html</link>
+      <guid>https://3020xmy.github.io/posts/155606013.html</guid>
+      <description>《环境配置指南》专栏致力于解决C++开发中第三方库配置难题。针对C++缺乏统一包管理的痛点，专栏系统讲解源码编译、包管理工具、链接方式、IDE集成及常见错误排查等内容，帮助开发者摆脱配置一小时，编码五分钟的困境。专栏面向C++初学者、跨平台开发者等技术人群，提供经过真实环境测试的详细配置步骤。目前已发布Freeglut配置指南，后续将涵盖Doxygen、Vulkan等工具的配置方法。作者分享自身配置经验，旨在打造实用可靠的技术手册，欢迎读者通过邮箱和GitHub交流反馈。</description>
+      <category>环境配置指南</category>
+      <pubDate>Sun, 07 Dec 2025 10:39:40 +0800</pubDate>
+    </item>
+    <item>
+      <title>环境配置指南：配置并使用Vulkan工具库</title>
+      <link>https://3020xmy.github.io/posts/155388933.html</link>
+      <guid>https://3020xmy.github.io/posts/155388933.html</guid>
+      <description>本文介绍了Vulkan图形API的配置与使用指南。首先概述了Vulkan作为OpenGL继承者的优势（高性能、低CPU开销）及更高的开发复杂度。详细讲解了Windows系统下的下载安装流程，包括组件选择、路径设置等步骤。文章还展示了Vulkan配置程序和硬件检测工具的使用方法，并提供了Visual Studio项目配置的具体操作：包含头文件路径设置、库文件引用以及链接器依赖项添加。最后演示了运行示例程序的方法，并提供了GitHub开源代码参考链接。</description>
+      <category>环境配置指南</category>
+      <pubDate>Sun, 07 Dec 2025 10:33:37 +0800</pubDate>
+    </item>
+    <item>
+      <title>项目实战：使用QCustomPlot实现多窗口绘制数据(支持GPU加速)</title>
+      <link>https://3020xmy.github.io/posts/155572427.html</link>
+      <guid>https://3020xmy.github.io/posts/155572427.html</guid>
+      <description>本文介绍了基于Qt6和QCustomPlot实现多窗口数据绘制的项目。项目采用主线程负责UI刷新、子线程负责数据生成的架构，支持高达5000万个数据点的高效绘制。关键技术包括：1)使用Freeglut实现GPU加速；2)通过信号槽机制实现线程间通信；3)采用滑动窗口机制优化大数据量显示。项目解决了OpenGL加速导致的颜色异常和像素显示问题，提供了完整的开源代码（Gitee/Github）。</description>
+      <category>项目实战</category>
+      <pubDate>Thu, 04 Dec 2025 21:51:44 +0800</pubDate>
+    </item>
+    <item>
+      <title>环境配置指南：编译并使用Freeglut工具库</title>
+      <link>https://3020xmy.github.io/posts/155578244.html</link>
+      <guid>https://3020xmy.github.io/posts/155578244.html</guid>
+      <description>Freeglut是OpenGL实用工具库GLUT的开源替代品。本文详细介绍了Freeglut 3.8.0版本的下载、编译和使用方法。通过官网下载源码后，使用CMake工具进行项目配置，选择MSVC编译环境生成Visual Studio解决方案文件。在VS2022中编译生成Debug/Release版本，最终生成的可执行文件存储在bin目录下。文章还提供了测试用例的开源链接(GitHub/Gitee)，帮助开发者快速上手使用Freeglut进行OpenGL开发。</description>
+      <category>环境配置指南</category>
+      <pubDate>Thu, 04 Dec 2025 21:39:18 +0800</pubDate>
+    </item>
+    <item>
+      <title>深入浅出OpenCV：编译并使用OpenCV</title>
+      <link>https://3020xmy.github.io/posts/155361911.html</link>
+      <guid>https://3020xmy.github.io/posts/155361911.html</guid>
+      <description>本文详细介绍了OpenCV的两种安装方式：本地直接安装和使用CMake编译源码。本地安装适合初学者，只需下载安装包并选择路径即可；源码编译则适用于需要自定义配置的用户，需使用CMake工具指定源码路径和生成选项。文章还提供了Qt搭配MSVC版本OpenCV的配置方法，包括路径添加和库文件引用。两种方式最终都会生成包含头文件和库文件的OpenCV开发环境，供后续项目使用。</description>
+      <category>深入浅出OpenCV</category>
+      <pubDate>Sun, 30 Nov 2025 12:39:55 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：CMake构建工具</title>
+      <link>https://3020xmy.github.io/posts/155361963.html</link>
+      <guid>https://3020xmy.github.io/posts/155361963.html</guid>
+      <description>本文介绍了CMake跨平台构建工具的安装步骤。首先从官网下载Windows版本，然后通过安装向导完成安装，包括接受协议、配置PATH环境变量、创建快捷方式等步骤。安装完成后可通过桌面快捷方式启动CMake。CMake是一个开源工具，通过CMakeLists.txt配置文件生成各种平台的构建文件（如Makefile、VS项目等），主要用于管理软件构建过程。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Sat, 29 Nov 2025 11:19:28 +0800</pubDate>
+    </item>
+    <item>
+      <title>Python实战派：安装配置Python环境</title>
+      <link>https://3020xmy.github.io/posts/155377912.html</link>
+      <guid>https://3020xmy.github.io/posts/155377912.html</guid>
+      <description>本文介绍了Python环境的安装与配置方法。首先说明了Python作为易读性强的通用编程语言的特点，然后详细讲解了从官网下载合适版本、安装时勾选管理员权限和PATH配置、自定义安装路径等关键步骤。文章还特别提醒了多环境共存可能导致的问题，并提供了通过命令行验证安装是否成功的方法。整个过程配有清晰的截图指引，适合Windows系统用户参考。</description>
+      <category>Python实战派</category>
+      <pubDate>Sat, 29 Nov 2025 10:18:23 +0800</pubDate>
+    </item>
+    <item>
+      <title>Wild_Pointer.博客：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154793288.html</link>
+      <guid>https://3020xmy.github.io/posts/154793288.html</guid>
+      <description>Wild_Pointer是一个专注系统编程与底层技术的深度技术博客，涵盖大模型、OpenCV、C++内存池等十余个专栏。面向具备编程基础、追求工程实践的开发者，提供可运行的代码示例、原理剖析和实践反思。博客旨在构建系统性技术学习资源，强调动手实践与深度思考。提供GitHub仓库和邮箱联系方式，欢迎技术交流与内容反馈。</description>
+      <category>Wild_Pointer.博客</category>
+      <pubDate>Fri, 28 Nov 2025 20:34:55 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：CppCheck静态代码检查工具</title>
+      <link>https://3020xmy.github.io/posts/155239326.html</link>
+      <guid>https://3020xmy.github.io/posts/155239326.html</guid>
+      <description>本文介绍了CppCheck静态代码检查工具的使用方法。CppCheck是一款开源工具，专注于检测C/C++代码中的错误，具有跨平台、零误报和无需编译的特点。文章详细讲解了下载安装过程，包括选择安装路径等步骤。重点演示了如何使用CppCheck分析项目代码：从新建项目、选择路径和配置，到设置分析选项、选择编码标准和外部工具插件。最后展示了分析结果的查看方式，包括错误定位、统计信息导出等功能，并强调了选择正确的C++标准和系统位数对分析准确性的重要性。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Fri, 28 Nov 2025 20:33:45 +0800</pubDate>
+    </item>
+    <item>
+      <title>大模型实战指南：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154842883.html</link>
+      <guid>https://3020xmy.github.io/posts/154842883.html</guid>
+      <description>《大模型实战指南》专栏旨在帮助开发者高效运用AI大模型，聚焦提示工程、上下文管理、工具集成和部署优化等实践技能。适合希望将大模型融入工作流的开发者、产品经理和技术爱好者，无需机器学习背景。专栏通过实战经验分享，填补简单示例和学术论文间的空白，提供注重工程细节的成本与可靠性指南。已发布Qt/C++开发提示词等文章，后续将持续更新更多实用内容，欢迎通过邮箱和GitHub交流反馈。</description>
+      <category>大模型实战指南</category>
+      <pubDate>Thu, 27 Nov 2025 20:29:18 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：Notepad++文本编辑器</title>
+      <link>https://3020xmy.github.io/posts/155313671.html</link>
+      <guid>https://3020xmy.github.io/posts/155313671.html</guid>
+      <description>本文介绍了Notepad++文本编辑器的下载、安装和使用方法。Notepad++是一款Windows平台下广受欢迎的开源文本编辑器，具有轻量、快速的特点。文章详细讲解了从官网下载安装包后，通过6个步骤完成安装的过程，包括语言选择、许可证确认、路径设置等。最后简要说明了Notepad++的基本功能，如文件新建/打开、内容查找和编码格式修改等操作。适合需要快速掌握Notepad++使用方法的读者参考。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Thu, 27 Nov 2025 20:23:31 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154793199.html</link>
+      <guid>https://3020xmy.github.io/posts/154793199.html</guid>
+      <description>《高效工具实战指南》专栏专注于帮助开发者掌握关键开发工具的使用技巧，包括Vim、Git、GDB等经典工具。专栏适合各类开发者群体，从初学者到经验丰富的工程师，旨在通过实战演示提升编码效率、调试能力和团队协作水平。目前已发布Vim、Git、GDB等工具入门教程，未来计划涵盖CppCheck、Procexp64等更多实用工具。专栏强调工具链的重要性，帮助开发者构建高效工作流，并提供GitHub仓库供读者交流反馈。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Tue, 25 Nov 2025 20:44:20 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：Everything文件搜索工具</title>
+      <link>https://3020xmy.github.io/posts/155236387.html</link>
+      <guid>https://3020xmy.github.io/posts/155236387.html</guid>
+      <description>Everything是一款高效的Windows文件搜索工具，提供快速索引和实时搜索功能。官网提供多个版本：安装版适合长期使用，便携版便于移动办公，精简版体积更小。安装过程简单，只需选择语言、接受协议、设置目录即可。使用时输入关键词即可快速查找文件，支持扩展名、大小、日期等修饰符搜索，还能使用正则表达式进行高级匹配。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Tue, 25 Nov 2025 20:07:19 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154793260.html</link>
+      <guid>https://3020xmy.github.io/posts/154793260.html</guid>
+      <description>《技术书籍精读笔记》专栏致力于帮助开发者深度消化经典技术书籍。针对当前技术学习中读得快忘得快的痛点，该专栏通过个人理解、代码验证和图解梳理等方式，对C++、算法、系统设计等领域的经典著作进行深度解读。目前已发布《Effective C++》《程序员的自我修养》等系列笔记，适合希望系统学习但时间有限的技术人员。专栏强调慢读一本好书胜过泛读百篇教程的理念，既作为作者深度学习的方式，也为读者提供高质量的导读指南。欢迎通过邮箱或GitHub交流探讨。</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Sat, 22 Nov 2025 09:44:25 +0800</pubDate>
+    </item>
+    <item>
+      <title>深入浅出OpenCV：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154790990.html</link>
+      <guid>https://3020xmy.github.io/posts/154790990.html</guid>
+      <description>「深入浅出OpenCV」专栏是一个面向计算机视觉初学者的教程，采用深入原理+浅出实现的教学方式，既讲解图像处理算法背后的数学原理，也提供Python+OpenCV的实践代码。专栏适合具备Python基础的开发者、学生和工程师学习，内容涵盖OpenCV核心功能与应用场景。目前已发布关于相机模型的文章，未来将继续扩展更多主题。读者可通过邮箱和GitHub仓库与作者交流反馈。</description>
+      <category>深入浅出OpenCV</category>
+      <pubDate>Sat, 22 Nov 2025 09:11:50 +0800</pubDate>
+    </item>
+    <item>
+      <title>Debug调试之道：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154842448.html</link>
+      <guid>https://3020xmy.github.io/posts/154842448.html</guid>
+      <description>《Debug调试之道》专栏旨在帮助开发者掌握系统化的调试技能，从初级到中级开发者均可受益。专栏强调调试不仅是找错，更是理解系统、提升代码质量的过程，涵盖GDB、Valgrind等工具使用及实战案例。适合C/C++、Python等语言开发者，内容涉及内存泄漏、性能优化等常见问题。目前已发布dump文件生成、线程泄漏排查等文章，未来将持续分享调试方法论与实践经验。通过该专栏，开发者可摆脱低效调试，建立科学的问题解决思维。</description>
+      <category>Debug调试之道</category>
+      <pubDate>Thu, 20 Nov 2025 20:31:29 +0800</pubDate>
+    </item>
+    <item>
+      <title>项目实战：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154792953.html</link>
+      <guid>https://3020xmy.github.io/posts/154792953.html</guid>
+      <description>本文介绍了「项目实战指南」专栏的内容规划与目标。专栏旨在通过C++实战项目(如网络服务、图形应用等)帮助学习者掌握完整的工程开发流程，包括需求分析、架构设计、测试优化等。适合已掌握C++基础但缺乏项目经验的学生或开发者。目前已发布视频通话、智能聊天室等项目教程，计划新增OpenCV目标检测系统等内容。作者提供了邮箱和GitHub仓库作为交流渠道，鼓励读者参与讨论和贡献。</description>
+      <category>项目实战</category>
+      <pubDate>Thu, 20 Nov 2025 20:12:07 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154792997.html</link>
+      <guid>https://3020xmy.github.io/posts/154792997.html</guid>
+      <description>「数据结构与算法精解」专栏致力于系统讲解算法原理与实战应用。专栏面向技术求职者、高校学生及开发者，涵盖经典算法、复杂度分析和实际场景应用，帮助读者从理解到实践。已发布链式队列、哈夫曼树等系列文章，未来将扩展更多内容。通过图解和代码实现，专栏旨在培养读者的算法思维和解题能力，避免机械记忆。欢迎通过邮箱和GitHub交流反馈。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Mon, 17 Nov 2025 21:06:21 +0800</pubDate>
+    </item>
+    <item>
+      <title>C++高并发内存池实战：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154843063.html</link>
+      <guid>https://3020xmy.github.io/posts/154843063.html</guid>
+      <description>本专栏介绍C++高并发内存池的设计与实现，针对高性能服务器等对内存管理有严格要求的场景。内存池通过预分配和复用内存来避免频繁系统调用，高并发版本则采用无锁设计、线程本地存储等技术优化多线程性能。专栏适合具备C++11和多线程基础的开发者，将深入讲解对齐、原子操作等底层细节，帮助读者构建系统级编程能力。目前已发布内存池分层实现相关文章，后续将继续完善内容，并提供了GitHub仓库和邮箱等交流渠道。</description>
+      <category>C++高并发内存池实战</category>
+      <pubDate>Mon, 17 Nov 2025 20:42:02 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154792972.html</link>
+      <guid>https://3020xmy.github.io/posts/154792972.html</guid>
+      <description>《源码剖析专栏导览》是一份面向C++开发者的技术专栏介绍。专栏聚焦于STL等高质量开源项目的源码分析，通过解构核心算法、架构设计和并发机制等底层实现，帮助开发者从会用进阶到精通。目标读者包括准备中高级面试的工程师、对底层技术感兴趣的进阶学习者等。目前已发布9篇STL相关的深度解析文章，涵盖容器、迭代器、红黑树等主题，并计划拓展Redis等更多项目源码分析。专栏提供GitHub资源仓库和联系方式，鼓励读者参与交流讨论，共同探索代码背后的设计哲学。</description>
+      <category>源码剖析</category>
+      <pubDate>Sun, 16 Nov 2025 21:52:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>设计模式实战精讲：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154793232.html</link>
+      <guid>https://3020xmy.github.io/posts/154793232.html</guid>
+      <description>《设计模式实战精讲》专栏介绍软件开发中23种经典设计模式的应用实践，分为创建型、结构型和行为型三类。专栏面向掌握面向对象语言的开发者，旨在通过具体案例解析设计模式的本质价值，帮助读者理解其设计原则而非生搬硬套。内容涵盖已发布的四大模块及后续扩展，适合各阶段开发者提升代码设计能力。专栏提供GitHub资源仓库及作者联系方式，欢迎交流反馈。</description>
+      <category>设计模式实战精讲</category>
+      <pubDate>Sun, 16 Nov 2025 21:30:14 +0800</pubDate>
+    </item>
+    <item>
+      <title>OpenCL：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154792796.html</link>
+      <guid>https://3020xmy.github.io/posts/154792796.html</guid>
+      <description>本文介绍了《OpenCL异构计算实战》专栏的相关内容。OpenCL是一种跨平台并行计算框架，支持多种硬件设备，广泛应用于图像处理、科学计算等领域。专栏面向开发者、工程师、学生等群体，旨在提供系统化的OpenCL学习指南，帮助读者掌握异构编程技能。目前已发布内核程序编写等基础教程，未来将推出更多实战内容。欢迎通过邮箱和GitHub进行交流反馈。</description>
+      <category>OpenCL</category>
+      <pubDate>Sat, 15 Nov 2025 10:13:44 +0800</pubDate>
+    </item>
+    <item>
+      <title>Python实战派：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154793033.html</link>
+      <guid>https://3020xmy.github.io/posts/154793033.html</guid>
+      <description>Python入门容易，但会写和写得好之间仍有不小差距。很多教程停留在语法示例，缺乏真实场景下的最佳实践——比如如何组织项目结构、如何处理异常、如何写可测试的代码、如何选择合适的库组合。笔者在多年使用 Python 进行数据工程、Web 开发和自动化运维的过程中，积累了不少踩坑经验和高效模式。开设本专栏，就是希望以实用为导向，用真实小项目串联核心库的使用方法，帮你避开常见误区，写出更健壮、可维护的代码。</description>
+      <category>Python实战派</category>
+      <pubDate>Sat, 15 Nov 2025 10:01:02 +0800</pubDate>
+    </item>
+    <item>
+      <title>Qt：全景目录</title>
+      <link>https://3020xmy.github.io/posts/154792781.html</link>
+      <guid>https://3020xmy.github.io/posts/154792781.html</guid>
+      <description>《Qt开发指南》专栏介绍：这是一个面向各层次Qt开发者的教程专栏，涵盖从基础到进阶的Qt开发内容。专栏系统介绍跨平台C++框架Qt的核心功能，包括GUI开发、多线程、网络通信等模块，特别适合刚接触Qt或希望深入学习的开发者。目前已发布调试技巧、API调用、多线程实现等5篇实战文章，后续将持续更新更多实用教程。专栏旨在填补中文Qt社区的空白，帮助开发者高效掌握Qt技能。欢迎通过邮箱或GitHub仓库参与交流互动。</description>
+      <category>Qt</category>
+      <pubDate>Sat, 15 Nov 2025 09:43:06 +0800</pubDate>
+    </item>
+    <item>
+      <title>深入浅出OpenCV：简析单目相机模型中的针孔模型</title>
+      <link>https://3020xmy.github.io/posts/154599769.html</link>
+      <guid>https://3020xmy.github.io/posts/154599769.html</guid>
+      <description>本文详细解析了单目相机中的针孔模型原理及内参矩阵推导过程。首先介绍了针孔模型中的四大坐标系：像素坐标系、图像坐标系、相机坐标系和世界坐标系。然后阐述了笛卡尔坐标与齐次坐标的区别及其在几何变换中的优势。核心部分通过相似三角形原理，从相机坐标系到图像坐标系的转换开始，逐步推导出像素坐标系下的坐标计算公式，最终得到包含焦距f、主点坐标(u0,v0)和像素尺寸(dx,dy)的内参矩阵K。该矩阵为后续畸变校正和三维重建提供了重要的几何基础参数。</description>
+      <category>深入浅出OpenCV</category>
+      <pubDate>Sun, 09 Nov 2025 12:31:49 +0800</pubDate>
+    </item>
+    <item>
+      <title>Qt：避免QRunnable和QObject多重继承</title>
+      <link>https://3020xmy.github.io/posts/153726309.html</link>
+      <guid>https://3020xmy.github.io/posts/153726309.html</guid>
+      <description>本文介绍了Qt中QRunnable的轻量级线程实现方案。针对传统多重继承QRunnable和QObject带来的开销问题，提出使用QMetaObject::invokeMethod的解决方案。文章首先分析QRunnable的优缺点，指出其轻量特性但缺乏信号槽支持的局限。然后详细说明如何通过Q_INVOKABLE宏标记函数，利用QMetaObject实现跨线程调用。最后给出进阶方案：通过回调函数指针和std::function实现类型自适应的动态调用，既保持QRunnable的轻量特性，又解决了信号槽通信问题</description>
+      <category>Qt</category>
+      <pubDate>Sat, 25 Oct 2025 15:16:33 +0800</pubDate>
+    </item>
+    <item>
+      <title>Debug调试之道：Unicode编码中的零宽空格0x200B</title>
+      <link>https://3020xmy.github.io/posts/152952946.html</link>
+      <guid>https://3020xmy.github.io/posts/152952946.html</guid>
+      <description>本文探讨了Unicode零宽空格（U+200B）在编程中引发的异常问题及其解决方案。作者通过实际项目案例展示了该不可见字符导致编译器无法识别函数和信号的问题，详细分析了异常成因（主要是从AI生成内容复制时带入的隐藏字符）。文章提供了两种解决方法：使用Visual Studio的InvisibleCharacterVisualizer插件显示并删除零宽空格，或通过Windows记事本的"显示Unicode控制字符"功能识别该字符。这些方案能有效解决由零宽空格引发的编译错误和代码异常问题。</description>
+      <category>Debug调试之道</category>
+      <pubDate>Fri, 10 Oct 2025 21:50:26 +0800</pubDate>
+    </item>
+    <item>
+      <title>大模型实战指南：面向Qt/C++开发工程师的提示词（附Trae示例）</title>
+      <link>https://3020xmy.github.io/posts/152926344.html</link>
+      <guid>https://3020xmy.github.io/posts/152926344.html</guid>
+      <description>本文介绍了AI提示词与知识库在Qt/C++开发中的关键作用。知识库确保AI输出的可靠性，而精心设计的提示词能显著提升AI回复的专业性和实用性。针对Qt/C++开发者，文章提供了一套专业提示词模板，涵盖现代C++特性、Qt核心机制、性能优化等13个技术领域，并规范了代码示例格式和输出要求。通过对比示例展示了提示词使用前后的显著差异：使用后AI能生成格式规范、注释清晰的代码，并能针对特定需求（如CUDA优化）提供专业建议。该提示词将持续更新，帮助开发者更高效地利用AI提升开发效率。</description>
+      <category>大模型实战指南</category>
+      <pubDate>Fri, 10 Oct 2025 20:35:28 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：程序员的自我修养-链接，转载与库（伍）</title>
+      <link>https://3020xmy.github.io/posts/150699870.html</link>
+      <guid>https://3020xmy.github.io/posts/150699870.html</guid>
+      <description>本文介绍了Windows下PE文件格式及其分析方法。PE文件基于COFF格式扩展而来，保留了DOS兼容性并增加了Windows特有功能。文章对比了PE与ELF文件的异同。重点讲解了使用dumpbin工具分析PE文件的方法：首先配置环境路径，然后使用dumpbin/ALL命令输出文件信息，最后解析了.drectve段（含链接指令）、.debug段（调试信息）和符号表（含编译器生成的字符串常量名）。全文通过对比分析和实例演示，帮助读者理解Windows目标文件结构</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Sun, 24 Aug 2025 14:07:21 +0800</pubDate>
+    </item>
+    <item>
+      <title>Debug调试之道：使用Windows API排查程序的线程泄露</title>
+      <link>https://3020xmy.github.io/posts/150612814.html</link>
+      <guid>https://3020xmy.github.io/posts/150612814.html</guid>
+      <description>本文介绍了Windows系统中程序线程泄露的排查方法。首先分析了线程泄露的三大原因（未正确终止、线程池管理不当、资源依赖未解除）及其后果（资源耗尽、性能下降、系统不稳定）。随后讲解了两种排查工具：Windows资源监视器和Procexp进程资源管理器。重点给出了通过Windows API编写的代码解决方案，包括线程信息结构体定义、线程快照捕获、线程状态比对等核心功能，可输出线程ID、内存地址及所属模块信息，帮助准确定位泄露源。最后演示了如何将监控信息输出到界面或日志中，便于实时分析线程变化情况。</description>
+      <category>Debug调试之道</category>
+      <pubDate>Sun, 24 Aug 2025 11:27:40 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：程序员的自我修养-链接，转载与库（肆）</title>
+      <link>https://3020xmy.github.io/posts/150146588.html</link>
+      <guid>https://3020xmy.github.io/posts/150146588.html</guid>
+      <description>本文讲解了编译链接中的强符号与弱符号、强引用与弱引用的概念及其处理规则。强符号包括已初始化的全局变量和函数定义，弱符号包括未初始化的全局变量和显式声明为weak的属性。链接器遵循三条规则处理符号冲突：禁止多重强定义、优先选择强符号、弱符号选择最大空间类型。通过弱引用特性，可以实现库函数覆盖、功能模块的灵活裁剪等应用，如判断单线程/多线程模式。文中提供了具体代码示例说明这些特性的实际应用。</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Sun, 10 Aug 2025 14:19:49 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：程序员的自我修养-链接，转载与库（叁）</title>
+      <link>https://3020xmy.github.io/posts/150144523.html</link>
+      <guid>https://3020xmy.github.io/posts/150144523.html</guid>
+      <description>本文分析了使用binutils工具输出的目标文件符号表信息。通过编译示例C代码并使用objdump命令，展示了Windows系统下符号表的复杂输出格式。重点解析了符号表各列的含义，包括索引、节区索引、标志位、符号类型和存储类别等关键信息。其中详细说明了节区索引的数值含义、标志位的十六进制组合表示方法，以及存储类别的具体分类。文章特别指出工具输出中的ty20与代码定义差异的原因，并提供了完整的存储类别值对照表。最后提醒读者注意工具对十六进制值的简化表示可能导致的解读差异。</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Sun, 10 Aug 2025 13:26:20 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：程序员的自我修养-链接，转载与库（贰）</title>
+      <link>https://3020xmy.github.io/posts/149664697.html</link>
+      <guid>https://3020xmy.github.io/posts/149664697.html</guid>
+      <description>本文深入解析了目标文件的结构与组成，重点以Linux的ELF格式为例。文章首先介绍了目标文件中除常见段外的其他段类型，如.rodata、.comment等，并详细阐述了目标文件的整体结构，包括文件头、段表和各个段的位置关系。通过对比Windows与Linux平台下目标文件的差异，重点讲解了ELF文件头中的魔数含义及其识别机制。文章还详细分析了段表的结构、段类型分类及标志位含义，并提供了32位程序相关类型的长度说明。最后解释了目标文件中段分布的对齐机制及其必要性，为理解目标文件底层原理提供了全面指导。</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Sat, 26 Jul 2025 15:55:28 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：程序员的自我修养-链接，转载与库（壹）</title>
+      <link>https://3020xmy.github.io/posts/149295107.html</link>
+      <guid>https://3020xmy.github.io/posts/149295107.html</guid>
+      <description>本文介绍了如何使用binutils工具中的objdump分析目标文件。首先说明了ELF格式文件的分类，包括可重定位文件、可执行文件等。然后详细讲解了如何安装binutils工具，并通过样例代码演示了目标文件的编译过程。文章重点分析了目标文件中各段的分布和作用，包括text代码段、data数据段、bss段等，解释了它们存储的不同类型数据。通过objdump命令输出的信息，详细解读了函数在text段的分布、数据段中变量的存储方式以及bss段的特点。最后指出后续将探讨目标文件头部信息等内容。</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Sun, 13 Jul 2025 15:33:37 +0800</pubDate>
+    </item>
+    <item>
+      <title>Debug调试之道：WinDBG分析Dump文件汇总</title>
+      <link>https://3020xmy.github.io/posts/148123479.html</link>
+      <guid>https://3020xmy.github.io/posts/148123479.html</guid>
+      <description>本文介绍了使用WinDBG工具分析Dump文件的基本流程和常用指令。主要内容包括：常用调试指令如.excr、kn、kv、kp等用于查看线程上下文和堆栈信息；分析异常时的关键步骤，如检查异常类型、堆栈信息、模块引用情况等；以及作者总结的实用心得，如使用完全转储文件、反汇编分析等。文章旨在帮助读者掌握WinDBG调试Dump文件的基本方法，建议通过实践来构建完整的调试框架。</description>
+      <category>Debug调试之道</category>
+      <pubDate>Sat, 07 Jun 2025 23:00:57 +0800</pubDate>
+    </item>
+    <item>
+      <title>Debug调试之道：编译qBreakpad并使用其生成Dump文件</title>
+      <link>https://3020xmy.github.io/posts/147669458.html</link>
+      <guid>https://3020xmy.github.io/posts/147669458.html</guid>
+      <description>而本小节将是对于生成Dump文件的扩展，主要是讲解多种不同的第三方库生成Dump文件，而本篇博客的重点将是对于qBreakpad进行讲解。编译完成qBreakpad后，我们需要在项目中使用qBreakpad，接下来将讲解如何在Vs中使用qBreakpad第三方库生成项目，后续也会附上博主的项目示例开源链接。：该库依赖于Qt，支持跨平台使用，主要针对的场景是专为 Qt 应用程序设计，简化集成流程，能自动处理 Qt 事件循环与信号。该库由谷歌官方维护，作为Breakpad的现代化第三方库的替代。</description>
+      <category>Debug调试之道</category>
+      <pubDate>Sat, 03 May 2025 18:07:57 +0800</pubDate>
+    </item>
+    <item>
+      <title>Debug调试之道：Dump文件的生成(附Qt示例)</title>
+      <link>https://3020xmy.github.io/posts/147653402.html</link>
+      <guid>https://3020xmy.github.io/posts/147653402.html</guid>
+      <description>在Windows下，我们可以使用SetUnhandledExceptionFilter函数设置程序的异常回调，并且在激活的函数中使用MiniDumpWriteDump接口函数生成对应的dump文件，以下是生成Dump文件的代码，代码含有注释想清楚了解代码的可以通过注释或者文档查看。每次生成的可执行文件都会产生一个对应的PDB文件。为了方便Qt开发工作者使用代码生成Dump文件，以下是博主调试程序的开源链接，大家可以在GitHub中下载下来进行调试，后续的WinDbg使用也会在这份程序的基础上讲解。</description>
+      <category>Debug调试之道</category>
+      <pubDate>Fri, 02 May 2025 16:17:41 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：初步认识WinDbg和dump文件</title>
+      <link>https://3020xmy.github.io/posts/147652602.html</link>
+      <guid>https://3020xmy.github.io/posts/147652602.html</guid>
+      <description>本文介绍了Windows调试工具WinDbg及其使用方法。WinDbg是微软开发的强大调试工具，支持断点调试、反汇编分析、自动化诊断等功能，特别适合分析系统级问题和客户环境崩溃。文章详细说明了WinDbg的两个版本（10.0和Preview）的安装方法，并重点讲解了Dump文件的概念。Dump文件是程序崩溃时的内存快照，分为小型转储、内核转储和完全转储三种类型，分别适用于不同场景的故障分析。作为系列教程的第一篇，本文为后续讲解如何使用WinDbg结合Dump文件调试Qt程序奠定了基础。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Thu, 01 May 2025 16:52:18 +0800</pubDate>
+    </item>
+    <item>
+      <title>OpenCL：浅析CL内核程序接口函数</title>
+      <link>https://3020xmy.github.io/posts/144803631.html</link>
+      <guid>https://3020xmy.github.io/posts/144803631.html</guid>
+      <description>本篇文章将针对上一篇提到的第一个CL内核程序中的函数接口进行刨析，解释每一个接口文档的作用。当然这或许比不上官方的文档，但是详细的解析有利于后续开发的翻阅，只有做好归纳总结才能为己所用，在开发中遇到的问题也会迎刃而解。附官方文档链接：OpenCL2.1接口OpenCL2.1接口.pdf。</description>
+      <category>OpenCL</category>
+      <pubDate>Mon, 06 Jan 2025 18:00:33 +0800</pubDate>
+    </item>
+    <item>
+      <title>OpenCL：了解OpenCL模型到编写第一个CL内核程序</title>
+      <link>https://3020xmy.github.io/posts/144696275.html</link>
+      <guid>https://3020xmy.github.io/posts/144696275.html</guid>
+      <description>大多数由程序员编写的代码都是执行在CPU上的，而现代计算机不只提供了CPU还提供了GPU，但是大多数场景往往都不会涉及到使用GPU进行运算，有个别业务如ffmpeg编解码，OpenCV中UMat，VTK中的模型渲染等等则会使用到GPU，但是这些都是第三方编写好的函数进行调用。工作组的空间必须与Kernel程序的工作空间维度相同，整个工作空间可以划分为多个工作组空间，每一个工作组都有对应的工作组空间（这里其实就相当于内存模型中的全局内存内含多个工作组（局部内存），局部内存中又有多个工作节点（私有内存））</description>
+      <category>OpenCL</category>
+      <pubDate>Tue, 24 Dec 2024 17:30:18 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：C++ High Performance</title>
+      <link>https://3020xmy.github.io/posts/143652226.html</link>
+      <guid>https://3020xmy.github.io/posts/143652226.html</guid>
+      <description>本文摘要： 《C++高性能编程》一书笔记摘要，重点介绍C++核心概念和性能优化技巧。内容包括：零开销原则、值语义、参数传递规范；auto/decltype使用技巧；移动语义与五法则；RVO/NRVO优化原理；函数对象与lambda表达式实现机制；std::function性能考量；性能分析方法（CPU/I/O绑定区分）。特别强调现代C++特性如移动构造、noexcept修饰、右值引用限定符等在实际开发中的应用，通过代码示例展示如何编写高效C++代码。</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Mon, 25 Nov 2024 00:12:42 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：STL中关联式容器之map</title>
+      <link>https://3020xmy.github.io/posts/141072814.html</link>
+      <guid>https://3020xmy.github.io/posts/141072814.html</guid>
+      <description>本文深入分析了STL中map容器的实现原理。map是基于红黑树(RB-tree)实现的关联容器，元素以键值对(pair)形式存储，按key自动排序。文章详细解析了map的底层结构，包括模板参数、迭代器类型定义等核心组成。重点介绍了map的构造函数、操作函数（如insert、erase、find等）以及重载运算符的实现方式，这些功能大多通过调用RB-tree的接口完成。与set容器相比，map允许修改实值(value)但不能修改键值(key)，且提供[]运算符方便元素访问</description>
+      <category>源码剖析</category>
+      <pubDate>Tue, 20 Aug 2024 21:41:42 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：STL中关联式容器之set</title>
+      <link>https://3020xmy.github.io/posts/141072808.html</link>
+      <guid>https://3020xmy.github.io/posts/141072808.html</guid>
+      <description>本文介绍了STL中的set容器，重点分析了其实现原理和主要操作函数。set容器基于红黑树(RB-tree)实现，具有自动排序特性且不允许重复元素。文章详细剖析了set的结构源码，展示了其构造函数、基本操作函数（如迭代器、容量查询等）、插入删除操作函数以及其他查找相关函数。所有操作都是通过转调用底层红黑树的操作实现，体现了良好的封装性。最后还介绍了set的重载运算符实现方式。</description>
+      <category>源码剖析</category>
+      <pubDate>Mon, 19 Aug 2024 00:51:21 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：STL中红黑树（RB-tree）</title>
+      <link>https://3020xmy.github.io/posts/141035931.html</link>
+      <guid>https://3020xmy.github.io/posts/141035931.html</guid>
+      <description>本文深入解析红黑树(RB-tree)的实现原理与数据结构设计。首先介绍红黑树的五大规则：根黑、不红红、黑路同等特性，并分析了插入节点时的三种情况（根节点、红叔叔、黑叔叔）及对应的旋转操作。对删除操作也分情况讨论，包括单子节点和无子节点场景。详细阐述了红黑树的节点结构设计、迭代器实现（双向迭代器），以及底层数据结构成员定义。最后探讨了红黑树的构造方式（空树/复制）和关键操作：insert_unique（不重复插入）、insert_equal（允许重复）和find查找方法</description>
+      <category>源码剖析</category>
+      <pubDate>Fri, 09 Aug 2024 23:16:07 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：STL中树的导览</title>
+      <link>https://3020xmy.github.io/posts/140856615.html</link>
+      <guid>https://3020xmy.github.io/posts/140856615.html</guid>
+      <description>本文介绍了STL中关联式容器的底层实现基础。首先区分了序列式和关联式容器的概念，重点讲解二叉搜索树的结构特性及其插入、删除操作。针对二叉搜索树可能出现的不平衡问题，文章进一步阐述了平衡二叉搜索树的概念，详细说明了通过单旋转和双旋转操作来维持树的平衡状态的方法。这些内容为后续讲解红黑树这一关联式容器的核心数据结构奠定了基础，并暗示将单独深入探讨红黑树的具体实现。全文由浅入深地构建了理解STL关联式容器的知识框架。</description>
+      <category>源码剖析</category>
+      <pubDate>Thu, 01 Aug 2024 22:18:46 +0800</pubDate>
+    </item>
+    <item>
+      <title>项目实战：基于OpenCV的社区安防系统</title>
+      <link>https://3020xmy.github.io/posts/140476294.html</link>
+      <guid>https://3020xmy.github.io/posts/140476294.html</guid>
+      <description>本文介绍了社区安防系统的开发方案，该系统采用OpenCV人脸识别技术，基于Qt框架实现客户端/服务器架构。系统通过TCP协议传输JSON格式数据，使用SqlLite数据库存储信息，并采用多线程处理人脸检测。开发中配置了Qt的network和sql模块，实现了包括心跳包检测、SeetaFace模型识别等功能。项目已开源，提供完整的社区安全解决方案，适用于人脸识别、出入管理等场景。</description>
+      <category>项目实战</category>
+      <pubDate>Tue, 16 Jul 2024 20:49:29 +0800</pubDate>
+    </item>
+    <item>
+      <title>Qt：C++与Python混合编程</title>
+      <link>https://3020xmy.github.io/posts/140364599.html</link>
+      <guid>https://3020xmy.github.io/posts/140364599.html</guid>
+      <description>本文介绍了在QtCreator中调用Python代码的方法。首先需要准备Python环境，包括确认Python版本、查找解释器路径以及检查环境变量配置。接着详细说明了在QtCreator中配置Python库的步骤：添加编译库、设置库文件路径和依赖路径。然后指导如何在项目中添加Python代码文件，并提供示例代码展示如何初始化Python解释器、导入模块并调用Python函数。最后通过一个简单的Hello函数调用示例，演示了Qt与Python的交互效果。整个过程涵盖了环境配置到代码调用</description>
+      <category>Qt</category>
+      <pubDate>Tue, 16 Jul 2024 20:23:01 +0800</pubDate>
+    </item>
+    <item>
+      <title>项目实战：基于Qt的智能即时聊天室项目</title>
+      <link>https://3020xmy.github.io/posts/139882052.html</link>
+      <guid>https://3020xmy.github.io/posts/139882052.html</guid>
+      <description>AIChatProject是一款基于QT框架开发的智能即时聊天系统，集成了百度文心一言AI模型。系统采用C/S架构，使用MySQL数据库存储数据，通过TCP协议和JSON格式实现高效通信。项目特色包括：多线程处理（QThreadPool）、模型/视图架构分离数据与界面、正则表达式输入验证、MD5密码加密等安全措施。开发需配置QT的sql、network和websockets模块。系统支持AI聊天和大文件传输，项目已在GitHub开源。</description>
+      <category>项目实战</category>
+      <pubDate>Sat, 22 Jun 2024 14:59:48 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：从零开始入门GDB</title>
+      <link>https://3020xmy.github.io/posts/139688015.html</link>
+      <guid>https://3020xmy.github.io/posts/139688015.html</guid>
+      <description>本文介绍了GDB调试工具的基本使用方法。主要内容包括：1) 如何开启调试模式（使用-g参数编译）；2) 启动和退出GDB的方法；3) 查看代码和设置断点的操作；4) 程序启动和main函数传参方式；5) 调试过程中的变量查看（print/display命令）和程序控制（step/next/finish命令）；6) 断点管理（设置、查看、启用/禁用、删除）等核心调试技巧。文章通过具体命令示例，详细说明了GDB调试的完整流程，为Linux环境下的程序调试提供了实用指导。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Sat, 15 Jun 2024 20:10:45 +0800</pubDate>
+    </item>
+    <item>
+      <title>Python实战派：NumPy（下）</title>
+      <link>https://3020xmy.github.io/posts/139637410.html</link>
+      <guid>https://3020xmy.github.io/posts/139637410.html</guid>
+      <description>本篇文章作为介绍NumPy库的最后一章，其内容包含常用的NumPy函数以及关于ufuns的广播机制。跟本系列的其他文章一样，本篇文章也是对函数的参数进行讲解，提供代码示例。代表接收的数据，数组或字符串；字符串使用","或空格分隔列，使用"；传入的data如果是数组，表示根据数组创建对应的副本，默认为True创建副本。字符串使用","或空格分隔列，使用"；PS：在分隔不等量的数组时，分隔后的第一个数组占多数，其他按比例分隔。代表分隔方向，默认为1横向，0代表纵向。代表分隔方向，默认为1横向，0代表纵向。</description>
+      <category>Python实战派</category>
+      <pubDate>Wed, 12 Jun 2024 22:14:14 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：从零开始入门Makefile</title>
+      <link>https://3020xmy.github.io/posts/139552917.html</link>
+      <guid>https://3020xmy.github.io/posts/139552917.html</guid>
+      <description>摘要：本文介绍了Linux中Makefile的基本概念与使用方法。Makefile通过规则定义编译流程，包含目标、依赖和命令三要素，能实现自动化编译。文章详细讲解了Makefile的执行流程、变量类型（自定义变量、预定义变量、自动变量）、模式匹配（使用%通配符）以及常用函数（wildcard、notdir、patsubst）。此外还补充了伪目标声明和强制执行的技巧。Makefile能有效解决多文件项目的编译管理问题，提高开发效率。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Mon, 10 Jun 2024 09:55:22 +0800</pubDate>
+    </item>
+    <item>
+      <title>Python实战派：NumPy（中）</title>
+      <link>https://3020xmy.github.io/posts/139560715.html</link>
+      <guid>https://3020xmy.github.io/posts/139560715.html</guid>
+      <description>本文主要介绍了NumPy库中常用的矩阵处理函数。内容包括：创建全1数组的ones函数、生成对角矩阵的diag函数；随机数生成函数；矩阵维度操作函数；以及矩阵合并函数。文章详细说明了各函数的参数和使用方法，并提供了具体的代码示例，帮助读者掌握NumPy库在矩阵操作中的实用技巧。</description>
+      <category>Python实战派</category>
+      <pubDate>Sun, 09 Jun 2024 13:25:20 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：Git从配置到合并冲突</title>
+      <link>https://3020xmy.github.io/posts/139483452.html</link>
+      <guid>https://3020xmy.github.io/posts/139483452.html</guid>
+      <description>本文详细介绍了Git版本控制系统的使用方法。主要内容包括：Git的下载安装与初始化配置；仓库创建与管理（git init/clone）；工作区域划分与文件状态；常用操作命令（status/add/commit/log等）；版本回退（reset）与差异比较（diff）；文件删除与忽略规则；SSH密钥配置；本地与远程仓库关联；分支管理与合并冲突解决。文章通过具体命令示例和操作图示，系统讲解了Git的核心功能，帮助开发者掌握代码版本控制、团队协作等关键技能</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Sun, 09 Jun 2024 12:54:40 +0800</pubDate>
+    </item>
+    <item>
+      <title>Python实战派：NumPy（上）</title>
+      <link>https://3020xmy.github.io/posts/139551969.html</link>
+      <guid>https://3020xmy.github.io/posts/139551969.html</guid>
+      <description>NumPy库是一个开源的Python科学计算库，它提供了高性能的多维数组对象、派生对象（如掩码数组、矩阵）以及用于快速操作数组的各种例程，包括逻辑、形状操作、离散傅立叶变换、基本线性代数、基本统计运算、随机模拟等操作，本系列博客讲重点对NumP库的函数已经操作进行讲解</description>
+      <category>Python实战派</category>
+      <pubDate>Sat, 08 Jun 2024 23:12:49 +0800</pubDate>
+    </item>
+    <item>
+      <title>Linux：动态库和静态库的编译与使用</title>
+      <link>https://3020xmy.github.io/posts/139535878.html</link>
+      <guid>https://3020xmy.github.io/posts/139535878.html</guid>
+      <description>在《MinGW：从入门到链接库》博客中简单介绍了如何编译动态链接库和静态链接库，本篇博客将详细的对Linux下编译动态链接库和静态链接库以及使用进行讲解，刨析创建库文件的时候Linux做了哪些操作。1..Linux下的动态链接库的命名规则为lib+文件名+.so，所以Linux中以.so结尾的文件，一般可以视为动态链接库的文件。1..Linux下的动态链接库的命名规则为lib+文件名+.a，所以Linux中以.a结尾的文件，一般可以视为静态链接库的文件。动态链接库在程序运行时被加载，而不是在编译时。</description>
+      <category>Linux</category>
+      <pubDate>Sat, 08 Jun 2024 12:35:07 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：顺序栈</title>
+      <link>https://3020xmy.github.io/posts/127081720.html</link>
+      <guid>https://3020xmy.github.io/posts/127081720.html</guid>
+      <description>顺序栈是一种基于数组实现的栈结构，具有后进先出(LIFO)特性。本文介绍了顺序栈的基本概念、操作方法和应用场景。顺序栈支持push、pop、peek等基本操作，并能动态扩展存储空间，常用于函数调用、表达式求值等场景。文章详细阐述了顺序栈的C语言实现，包括头文件引入、结点设计、接口函数定义及具体实现。实现部分涵盖了静态和动态两种顺序表的初始化、数据插入删除、查找等核心功能，展示了顺序栈从理论到代码的完整实现过程。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Fri, 07 Jun 2024 19:35:03 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：顺序串</title>
+      <link>https://3020xmy.github.io/posts/127395165.html</link>
+      <guid>https://3020xmy.github.io/posts/127395165.html</guid>
+      <description>本文介绍了顺序串的基本概念、特点和应用场景。顺序串是一种用连续内存存储字符串的数据结构，具有随机访问、动态扩展等优点。文章详细说明了顺序串的常见操作，包括字符访问、修改、插入、删除和连接等，并列举了其在文本编辑和字符串处理中的应用。此外，还提供了顺序串的C语言实现代码，包括结点设计、接口函数定义和具体实现，涵盖了初始化、赋值、复制、比较、连接、查找子串等核心功能。最后给出了简单的测试案例，展示了顺序串的基本使用方法。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Fri, 07 Jun 2024 19:25:12 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：哈夫曼树及其哈夫曼编码</title>
+      <link>https://3020xmy.github.io/posts/127798617.html</link>
+      <guid>https://3020xmy.github.io/posts/127798617.html</guid>
+      <description>本文介绍了哈夫曼树及其编码的实现方法。哈夫曼树是一种最优二叉树，通过最小化加权路径长度实现高效数据压缩。文章详细阐述了哈夫曼编码的构建步骤，包括统计字符频率、构建哈夫曼树和生成编码。在实现部分，设计了结点结构和相关接口函数，包括初始化、排序、插入和遍历等操作。最后通过测试案例演示了哈夫曼编码的生成过程，展示了字符与其二进制编码的对应关系。该实现可用于数据压缩、文件压缩等应用场景。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Fri, 07 Jun 2024 19:11:35 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：线索二叉树</title>
+      <link>https://3020xmy.github.io/posts/127857402.html</link>
+      <guid>https://3020xmy.github.io/posts/127857402.html</guid>
+      <description>摘要：本文介绍了线索二叉树的基本概念与C语言实现。线索二叉树通过在空指针处添加线索来优化遍历操作，包含前驱/后继节点查找功能。文章详细阐述了结点结构设计（包含数据域、左右子树指针和线索标识），以及初始化、插入、遍历（前序/中序/后序）等核心操作的接口定义与实现方法。代码示例展示了如何利用栈结构构建二叉树，并通过线索化处理提升遍历效率。该实现包含完整的线索化处理流程和三种遍历方式的适配实现。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Fri, 07 Jun 2024 19:11:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：共享栈</title>
+      <link>https://3020xmy.github.io/posts/127099679.html</link>
+      <guid>https://3020xmy.github.io/posts/127099679.html</guid>
+      <description>本文介绍了共享栈(SharedStack)的实现方法。共享栈是一种内存管理技术，允许多个执行线程共享同一块栈空间，具有内存效率高、管理简单等特点。文章详细阐述了实现过程：首先说明了共享栈的基本特性和优势；然后给出了所需头文件和结点设计；接着定义了初始化、判空、插入和弹出等接口函数；最后展示了这些函数的具体实现代码。实现中采用了双栈结构，通过top1和top2指针分别管理两个栈空间，并提供了完整的栈操作功能。该设计可用于操作系统或编程语言的运行时环境，支持多线程程序的栈管理需求。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Thu, 06 Jun 2024 23:13:09 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：单链表</title>
+      <link>https://3020xmy.github.io/posts/127081713.html</link>
+      <guid>https://3020xmy.github.io/posts/127081713.html</guid>
+      <description>本文详细介绍了单链表的实现方法，主要包括以下几个部分：1. 实现思想：单链表是一种线性、动态、非连续存储的数据结构，支持插入、删除、遍历等操作；2. 数据结构设计：定义了结点结构体，包含数据域和指针域；3. 接口函数：实现了初始化、检查、插入（前插/后插）、删除、查找、遍历等20余个核心操作函数；4. 具体实现：提供了带头结点和不带头结点两种实现方式，以及头插法和尾插法两种建立链表的方法。通过详细的函数定义和代码实现，完整展示了单链表的操作逻辑和实现原理。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Wed, 05 Jun 2024 20:03:22 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：顺序表</title>
+      <link>https://3020xmy.github.io/posts/127017689.html</link>
+      <guid>https://3020xmy.github.io/posts/127017689.html</guid>
+      <description>本文介绍了顺序表的实现方法，包括静态和动态两种实现方式。顺序表通过连续内存空间存储数据，支持随机访问（O(1)），但插入删除操作需要移动元素（O(n)）。文章详细说明了顺序表的数据结构设计（包含静态数组和动态指针两种方案），并给出完整的接口函数实现，包括初始化、增删改查等核心操作。其中特别处理了静态与动态顺序表的不同实现细节，如动态扩展数组大小、数据迁移等关键问题。所有函数都包含详尽的代码注释，展现了顺序表这一基础数据结构的具体实现思路。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Tue, 04 Jun 2024 19:01:08 +0800</pubDate>
+    </item>
+    <item>
+      <title>数据结构与算法精解：链式队列</title>
+      <link>https://3020xmy.github.io/posts/127600376.html</link>
+      <guid>https://3020xmy.github.io/posts/127600376.html</guid>
+      <description>本文介绍了链式队列的实现方法。链式队列通过链表实现队列的先进先出(FIFO)特性，相比数组实现具有更高的灵活性。主要内容包括：实现思想，头文件引入与节点设计，关键接口函数实现。</description>
+      <category>数据结构与算法精解</category>
+      <pubDate>Mon, 03 Jun 2024 22:50:30 +0800</pubDate>
+    </item>
+    <item>
+      <title>项目实战：基于TCP协议的视频通话项目</title>
+      <link>https://3020xmy.github.io/posts/139101996.html</link>
+      <guid>https://3020xmy.github.io/posts/139101996.html</guid>
+      <description>本文介绍了一个基于TCP协议的视频传输Demo的实现方案。设计思路主要包括：通过定时捕获摄像头画面并分帧传输实现视频；使用QTcpSocket建立TCP连接；采用QThreadPool管理线程；支持音频录制功能。实现步骤包括：配置Pro文件引入多媒体模块，初始化摄像头和音频设备，设计界面布局，建立TCP连接模块，开发定时捕获画面功能，以及处理接收数据的线程函数。该Demo展示了基本的视频传输功能，但还需要进一步优化才能实现完整的视频通话功能。文章详细说明了各功能模块的实现方法，并提供了相关代</description>
+      <category>项目实战</category>
+      <pubDate>Sat, 01 Jun 2024 17:53:05 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：Vim的安装及使用</title>
+      <link>https://3020xmy.github.io/posts/139280014.html</link>
+      <guid>https://3020xmy.github.io/posts/139280014.html</guid>
+      <description>本文详细介绍了Linux下Vim编辑器的使用指南，包括Vim的下载安装、三种模式（命令模式、编辑模式、末行模式）及其切换方法。重点讲解了命令模式下的各种操作技巧，如光标移动、文本编辑、复制粘贴、查找替换等，以及末行模式中的文件操作、分屏功能等实用命令。此外还介绍了man文档的使用方法和代码注释技巧。文章基于CentOS系统编写，同时提供了针对不同Linux发行版的适配建议，帮助读者快速掌握这款强大的文本编辑器。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Thu, 30 May 2024 10:21:32 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：STL中序列式容器之list</title>
+      <link>https://3020xmy.github.io/posts/139273563.html</link>
+      <guid>https://3020xmy.github.io/posts/139273563.html</guid>
+      <description>本文详细介绍了STL中list容器的实现原理。list采用环状双向链表结构，每个节点包含前后指针和数据域。其迭代器为双向迭代器，支持增删操作而不失效。list通过精确内存管理实现高效操作，包括插入(insert/push)、删除(erase/pop)、合并(merge)、反转(reverse)和排序(sort)等。与vector相比，list在频繁增删场景下性能更优，但随机访问效率较低。文章通过源码分析展示了list的核心数据结构、内存管理机制和各类操作实现方法，为理解和使用STL list容器提供了参考</description>
+      <category>源码剖析</category>
+      <pubDate>Tue, 28 May 2024 20:46:59 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：STL中序列式容器之vector</title>
+      <link>https://3020xmy.github.io/posts/139218193.html</link>
+      <guid>https://3020xmy.github.io/posts/139218193.html</guid>
+      <description>本文主要讲解STL中的容器实现，重点对比序列式容器和关联式容器的区别，并详细分析vector容器的实现。序列式容器按元素添加顺序组织数据，支持快速随机访问；关联式容器通过键值对存储，使用平衡树或哈希表组织，查找效率更高。文章深入剖析vector的数据结构、构造函数、析构函数实现，以及常用操作如push_back、pop_back、insert、erase等的源码实现。vector采用线性连续空间结构，使用三个迭代器(start、finish、end_of_storage)分别标记已使用空间头尾和总空间尾，能</description>
+      <category>源码剖析</category>
+      <pubDate>Sun, 26 May 2024 21:02:29 +0800</pubDate>
+    </item>
+    <item>
+      <title>C++高并发内存池实战：PageCache层</title>
+      <link>https://3020xmy.github.io/posts/139126199.html</link>
+      <guid>https://3020xmy.github.io/posts/139126199.html</guid>
+      <description>本文介绍了C++高并发内存池的PageCache层设计与实现。PageCache层作为内存池的最底层，负责向操作系统申请内存页(Page)并管理CentralCache层的内存分配。文章详细阐述了PageCache的哈希桶结构（包含256个Span双向链表）及其关键接口：NewSpan()用于分配内存，MapObjectToSpan()实现ID映射，ReleaseSpanToPageCache()管理内存释放并处理内存合并。特别针对大于256KB的大内存申请，采用直接向OS申请/释放的机制，同时通过加锁保证</description>
+      <category>C++高并发内存池实战</category>
+      <pubDate>Wed, 22 May 2024 19:58:46 +0800</pubDate>
+    </item>
+    <item>
+      <title>C++高并发内存池实战：CentralCache层</title>
+      <link>https://3020xmy.github.io/posts/139074444.html</link>
+      <guid>https://3020xmy.github.io/posts/139074444.html</guid>
+      <description>本文介绍了高并发内存池中CentralCache层的设计与实现。首先分析了Span对象的结构，包含页号、页数、前后指针等成员。然后设计了SpanList双向链表类，实现插入删除等操作，并采用单例模式创建CentralCache类。重点实现了三个关键函数：FetchRangeObj()用于分配内存给ThreadCache层，GetOneSpan()从PageCache层申请新内存，ReleaseListToSpans()管理ThreadCache层释放的内存。整个过程需要考虑多线程安全问题，通过加锁机制避免竞</description>
+      <category>C++高并发内存池实战</category>
+      <pubDate>Tue, 21 May 2024 20:44:26 +0800</pubDate>
+    </item>
+    <item>
+      <title>C++高并发内存池实战：ThreadCache层</title>
+      <link>https://3020xmy.github.io/posts/139047203.html</link>
+      <guid>https://3020xmy.github.io/posts/139047203.html</guid>
+      <description>本文分析了内存池的ThreadCache层实现机制，重点阐述了内存分配和释放流程。ThreadCache层采用哈希桶结构管理不同大小的内存块，通过映射规则优化内存利用率。内存分配采用三级缓存机制：ThreadCache→CentralCache→PageCache→操作系统。释放流程则逆向归还内存，实现内存合并管理。文章详细介绍了ThreadCache的类设计，包括FreeList节点操作、内存对齐映射算法及慢增长策略。最后解释了线程本地存储(TLS)在多线程环境中的优势及实现方式。通过assert宏验证内</description>
+      <category>C++高并发内存池实战</category>
+      <pubDate>Mon, 20 May 2024 20:39:26 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：STL中迭代器概念与Traits编程方法</title>
+      <link>https://3020xmy.github.io/posts/138864739.html</link>
+      <guid>https://3020xmy.github.io/posts/138864739.html</guid>
+      <description>本文深入探讨了STL迭代器的设计思想与实现方法。首先阐述了迭代器作为连接容器与算法的桥梁作用，重点介绍了Traits编程方法这一关键技术。文章详细讲解了五种迭代器类型判断的解决方案：参数类型判断、返回值类型判断、原生指针处理、const元素特化等。通过代码示例展示了iterator_traits结构体的设计与实现，包括value_type、difference_type等关键特性的封装。最后，以advance()和distance()函数为例，说明了如何针对不同迭代器类型设计高效算法。全文系统性地解析了迭代</description>
+      <category>源码剖析</category>
+      <pubDate>Sun, 19 May 2024 19:23:37 +0800</pubDate>
+    </item>
+    <item>
+      <title>C++高并发内存池实战：初步了解</title>
+      <link>https://3020xmy.github.io/posts/138633128.html</link>
+      <guid>https://3020xmy.github.io/posts/138633128.html</guid>
+      <description>本文深入探讨了C++高并发内存池的实现原理与技术细节。首先介绍了高并发系统的特点与内存池的核心概念，包括预分配内存、固定大小内存块等关键特性。重点分析了定长内存池的实现方法，详细展示了跨平台的系统调用封装(Malloc)、内存分配(New)与释放(Delete)接口的实现代码。文章最后勾勒出高并发内存池的三层架构：线程级缓存ThreadCache减少锁竞争，中心缓存CentralCache作为中介层，以及直接与操作系统交互的PageCache。该架构通过分层设计有效提升了多线程环境下的内存分配效率，为后续深</description>
+      <category>C++高并发内存池实战</category>
+      <pubDate>Sun, 12 May 2024 20:07:38 +0800</pubDate>
+    </item>
+    <item>
+      <title>源码剖析：STL中空间配置器(allocator)</title>
+      <link>https://3020xmy.github.io/posts/138166600.html</link>
+      <guid>https://3020xmy.github.io/posts/138166600.html</guid>
+      <description>针对阅读STL源码而言，或许许多人觉得阅读侯捷所著的《STL源码剖析》是过时的，但是我并不觉得，因为这些人往往是阅读过该书，学的更深入才对这本书进行这样的评价，针对入门的为而言，有一本书能带你大致了解STL源码的框架，这是极为便利的。针对最新版本的源码而言，这本书的确是过时的，但是并不影响我们去了解STL源码的框架，去熟悉源码的语法。我觉得一本好书不在于所有人的评价，只要它是让人学习的过程中首先了解到的便是好书。</description>
+      <category>源码剖析</category>
+      <pubDate>Fri, 10 May 2024 21:33:07 +0800</pubDate>
+    </item>
+    <item>
+      <title>设计模式实战精讲：行为型模式</title>
+      <link>https://3020xmy.github.io/posts/138472194.html</link>
+      <guid>https://3020xmy.github.io/posts/138472194.html</guid>
+      <description>本篇博客包含11种设计模式，自从学习这么多种设计模式后，我的心态也发生了变化，或许不会存在永远按照设计模式来设计的程序，一个项目也可能存在符合多种设计模式的情况，但是无论正确与否，我觉得可读性强的，利于维护的，方便增加功能的项目就是好项目。(例如有三个对象，调用顺序是A-&gt;B-&gt;C，把所有的项目都先传递给A，A拿到所有的项目后，把属于自己负责的项目留下来，把剩下的传递给B，然后B把属于自己的留下来，把不属于自己的再传递给C)1.定义抽象元素类：定义访问者可调用的函数，访问者通过该函数实现修改元素内的内容。</description>
+      <category>设计模式实战精讲</category>
+      <pubDate>Mon, 06 May 2024 16:38:37 +0800</pubDate>
+    </item>
+    <item>
+      <title>C++设计模式(中)：结构型模式</title>
+      <link>https://3020xmy.github.io/posts/138439092.html</link>
+      <guid>https://3020xmy.github.io/posts/138439092.html</guid>
+      <description>本文章将重点讲解结构型模式，也会根据上一篇博客的方式，分别从是什么，为什么，实现步骤，优缺点以及具体的实现代码四步来讲解具体的设计模式</description>
+      <category>设计模式实战精讲</category>
+      <pubDate>Sat, 04 May 2024 16:13:05 +0800</pubDate>
+    </item>
+    <item>
+      <title>设计模式实战精讲：创建型模式</title>
+      <link>https://3020xmy.github.io/posts/138418223.html</link>
+      <guid>https://3020xmy.github.io/posts/138418223.html</guid>
+      <description>本文章将重点讲解创建型模式，在本人分布的《C++设计模式：前传》中曾简单概述了一下创建型模式细分多少种设计模式，本篇文章将讲解这些设计模式的理论，优缺点和代码实现。</description>
+      <category>设计模式实战精讲</category>
+      <pubDate>Fri, 03 May 2024 21:52:52 +0800</pubDate>
+    </item>
+    <item>
+      <title>设计模式实战精讲：前传</title>
+      <link>https://3020xmy.github.io/posts/138168590.html</link>
+      <guid>https://3020xmy.github.io/posts/138168590.html</guid>
+      <description>这对于之前的我看来，设计模式的存在可有可无，也可以这么说，是我对设计模式的认识太少。俗话说的好：前人种树后人乘凉，在计算机这条道路上，无数前辈总结出来的经验还是有用的，为什么我会有如此想法呢？而这其中多多少少与设计模式有着千丝万缕的联系，在我不断的优化代码的过程中，我也意识到了设计模式的重要性，于是便有了这篇文章</description>
+      <category>设计模式实战精讲</category>
+      <pubDate>Thu, 02 May 2024 21:26:42 +0800</pubDate>
+    </item>
+    <item>
+      <title>高效工具实战指南：MinGW从入门到链接库</title>
+      <link>https://3020xmy.github.io/posts/137613972.html</link>
+      <guid>https://3020xmy.github.io/posts/137613972.html</guid>
+      <description>本文详细介绍了MinGW编译器在Windows系统下的使用方法。主要内容包括：1)MinGW的基本编译命令（gcc/g++）和可执行文件生成；2)编译过程的四个阶段（预处理、编译、汇编、链接）及其对应的命令参数；3)编码格式问题的解决方案；4)警告选项（-W、-Wall）和优化等级（-O1/-O2/-O3）的使用；5)多文件编译和路径指定方法；6)静态链接库（.a文件）的创建与链接；7)动态链接库（.dll文件）的创建与链接。文章通过具体命令示例和图示，帮助开发者掌握MinGW编译工具链的各项功能。</description>
+      <category>高效工具实战指南</category>
+      <pubDate>Tue, 16 Apr 2024 20:40:27 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：Effective C++（下）</title>
+      <link>https://3020xmy.github.io/posts/134700460.html</link>
+      <guid>https://3020xmy.github.io/posts/134700460.html</guid>
+      <description>本文摘要总结了《Effective C++》中18-33条款的核心内容，主要涵盖设计规范、实现技巧和继承设计三个方面。设计规范部分强调接口易用性（条款18）、class设计原则（条款19）、参数传递优化（条款20）、返回值处理（条款21）和封装性（条款22-25）。实现技巧部分包括变量定义时机（条款26）、减少转型（条款27）、返回值安全（条款28）、异常处理（条款29）、inline使用（条款30）和降低编译依赖（条款31）。继承设计部分阐述了is-a关系（条款32）和避免名称遮掩（条款33）</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Tue, 09 Apr 2024 19:33:48 +0800</pubDate>
+    </item>
+    <item>
+      <title>Qt：QThread源码源码剖析</title>
+      <link>https://3020xmy.github.io/posts/137198162.html</link>
+      <guid>https://3020xmy.github.io/posts/137198162.html</guid>
+      <description>本文从源码角度分析了Qt框架中的QThread线程类。首先介绍了QThread从创建到消亡的完整流程，包括调用Windows API创建线程、启动线程执行run()函数等核心步骤。接着详细解析了QThread的优先级枚举、构造函数和析构函数的实现细节，重点关注了线程安全处理机制。然后深入剖析了exec()和run()函数的工作原理，包括事件循环的创建和管理。最后探讨了线程终止的三种方式(quit()、exit()、terminate())及其实现原理，并指出terminate()可能导致程序崩溃的风险。全文</description>
+      <category>Qt</category>
+      <pubDate>Sun, 31 Mar 2024 15:22:24 +0800</pubDate>
+    </item>
+    <item>
+      <title>Qt：调用API</title>
+      <link>https://3020xmy.github.io/posts/136789124.html</link>
+      <guid>https://3020xmy.github.io/posts/136789124.html</guid>
+      <description>本文介绍了Qt调用API的完整流程：API是应用程序间通信的规范；Qt调用流程包括准备、创建对象、配置、执行和处理响应；需使用网络处理类（如QNetworkAccessManager）和数据处理类（如QJsonObject）；文档查阅要关注错误码、鉴权和请求说明；重点讲解了鉴权获取access_token和处理返回数据的方法。文章提供了完整的代码示例，包括请求发送、响应处理和正则表达式匹配等关键步骤，最后提到可提供完整调用程序的下载链接。</description>
+      <category>Qt</category>
+      <pubDate>Sun, 17 Mar 2024 22:20:43 +0800</pubDate>
+    </item>
+    <item>
+      <title>Qt：程序调试和界面讲解</title>
+      <link>https://3020xmy.github.io/posts/134771794.html</link>
+      <guid>https://3020xmy.github.io/posts/134771794.html</guid>
+      <description>本文介绍了QtCreator调试工具的使用方法，主要包括：常用快捷键如F5调试、F9断点设置等；界面布局中各窗口功能，重点讲解了堆栈、断点、监视等常用窗口；调试技巧，包括添加监视对象、查找对象调用代码段、通过堆栈定位异常代码等。文章旨在帮助Qt初学者掌握程序调试和异常排查的方法，内容简明实用，适合作为Qt开发的调试入门指南。</description>
+      <category>Qt</category>
+      <pubDate>Sun, 03 Dec 2023 23:51:16 +0800</pubDate>
+    </item>
+    <item>
+      <title>技术书籍精读笔记：Effective C++（上）</title>
+      <link>https://3020xmy.github.io/posts/134700028.html</link>
+      <guid>https://3020xmy.github.io/posts/134700028.html</guid>
+      <description>摘要：本文系统总结了《Effective C++》前17个条款的核心内容，重点阐述了C++编程中的关键规范和最佳实践。文章从C++语言特性（条款1-4）、构造/析构/赋值操作（条款5-12）和资源管理（条款13-17）三个维度展开，详细解释了每个条款的原理、应用场景和违反后果。主要内容包括：用const/enum/inline替代#define、确保对象初始化、多态基类使用虚析构函数、防止异常逃离析构函数、智能指针的正确使用等</description>
+      <category>技术书籍精读笔记</category>
+      <pubDate>Sat, 02 Dec 2023 10:14:19 +0800</pubDate>
+    </item>
+  </channel>
+</rss>
