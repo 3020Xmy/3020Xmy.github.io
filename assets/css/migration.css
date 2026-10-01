@@ -99,6 +99,7 @@ summary { cursor: pointer; }
 .source-file .code pre { max-height: 640px; }
 .source-note, .media-unavailable { color: var(--muted); font-size: .85rem; }
 .contact-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
+.subscribe { padding-block: clamp(32px,3vw,48px); }
 .code__bar { color: #b4b9d6; line-height: 1.5; }
 .code__bar span { overflow-wrap: anywhere; min-width: 0; }
 .code__copy { flex-shrink: 0; }
